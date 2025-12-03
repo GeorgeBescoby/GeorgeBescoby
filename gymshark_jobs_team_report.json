@@ -1,0 +1,373 @@
+{
+  "company_name": "Gymshark",
+  "company_domain": "gymshark.com",
+  "research_date": "2025-12-03",
+  "company_overview": {
+    "total_employees": 2293,
+    "employee_count_source": "LinkedIn company page",
+    "headquarters": "3 Central Boulevard, Solihull, West Midlands B90 8AB, UK",
+    "additional_office": "Unit 92, Hanbury Street, London E1 5JL, UK",
+    "us_office": "Downtown Denver, CO",
+    "founded": 2012,
+    "industry": "Retail - Fitness Apparel",
+    "company_size_range": "1,001-5,000 employees",
+    "description": "One of the fastest growing fitness apparel brands with over 22 million highly engaged social media followers"
+  },
+  "current_openings": [
+    {
+      "title": "Marketing Analytics Manager, North America",
+      "posted_date": "Posted approximately 3 months ago (September 2025)",
+      "location": "Denver, Colorado, United States",
+      "employment_type": "Full-time",
+      "seniority_level": "Manager",
+      "salary_range": "$88,000-$126,000 annually (varying by source and experience)",
+      "team_structure": "Reports to Head of Insights for North America; manages team of up to 4 analysts",
+      "key_responsibilities": [
+        "Define the most important KPIs and lead the design/building of all performance reporting, tools, and analysis for the North America marketing function (CRM, paid media, organic)",
+        "Lead a team of (up to four) analysts, focusing on their development and influence with key stakeholders across performance marketing groups",
+        "Research and refine the approach to media attribution in line with Gymshark's go-to-market approach in North America, ultimately working towards true return on ad spend for as many marketing channels as possible",
+        "Enable test and learn approaches, partner with global data teams for data quality, and forecast marketing channel performance"
+      ],
+      "required_skills": [
+        "Minimum 5 years+ experience working in a marketing analytics / marketing science role reporting on and optimizing paid and owned media",
+        "At least 2 years of team management experience",
+        "Knowledge of CRM (ESPs, CDPs, etc.) and paid media platforms from a reporting and insights perspective"
+      ],
+      "required_tools": [
+        "Facebook / Instagram (Meta Ads)",
+        "Google Ads",
+        "TikTok",
+        "DSPs (Demand Side Platforms)",
+        "ESPs (Email Service Providers)",
+        "CDPs (Customer Data Platforms)"
+      ],
+      "source": "https://www.linkedin.com/jobs/view/marketing-analytics-manager-at-gymshark-2861386851"
+    },
+    {
+      "title": "Marketing Data Analyst",
+      "posted_date": "Active as of December 2025",
+      "location": "Solihull, United Kingdom (Hybrid - minimum 3 days per week on-site)",
+      "employment_type": "Full-time",
+      "department": "Analytics - Marketing Analytics Team",
+      "key_responsibilities": [
+        "Contributing to delivery of regular (weekly/monthly/quarterly) Marketing channel reports and updates to leadership",
+        "Gathering requirements for, building, and maintaining automated reports and dashboards relevant to key Marketing performance metrics",
+        "Working with the data team to improve access to data for reporting, automating data extracts and manual processes",
+        "Ensuring maintenance, cleanliness and readiness of key data sources, and aligning data sources and metric definitions",
+        "Develop in-depth knowledge of Gymshark's marketing data to support deep dive analytics across segmentation to optimize campaign and channel effectiveness",
+        "Design & support rigorous experiments to understand the impact of and optimize campaigns across channels",
+        "Reporting retrospectively on campaign and channel performance to provide clear insight into how marketing channels are performing against channel and business KPIs",
+        "Analyzing performance across paid marketing channels, including Paid Social and Paid Search",
+        "Analyzing email campaign performance and engagement across audiences"
+      ],
+      "required_skills": [
+        "Strong analyst background with experience in a data analyst role, ideally working with marketing data",
+        "Experience working with, manipulating and analyzing large, complex data sets",
+        "Ability to translate complex data sets into concrete business recommendations",
+        "Practiced in drawing conclusions from insights and presenting to stakeholders who may not be analytical-minded or data savvy",
+        "Experience automating repetitive tasks and reporting processes",
+        "Knowledge of media data measurement methodologies and industry standards including online and offline channels",
+        "Strong knowledge of marketing principles, strategies and digital media channels"
+      ],
+      "required_tools": [
+        "Google Analytics",
+        "Alteryx",
+        "SQL",
+        "Tableau (or similar visualization tools like Power BI or Google Data Studio)"
+      ],
+      "source": "https://apply.gymshark.com/vacancies/319/marketing-data-analyst.html"
+    },
+    {
+      "title": "Digital Marketing Analytics Manager",
+      "posted_date": "September 8, 2024",
+      "closing_date": "September 17, 2024",
+      "status": "Likely filled - posting closed",
+      "location": "Solihull, England, United Kingdom",
+      "employment_type": "Full-time (Hybrid - minimum 3 days per week on-site)",
+      "salary_range": "$45,000 - $60,000",
+      "team_structure": "Reports to Digital Channels Director with team management responsibilities",
+      "key_responsibilities": [
+        "Driving commercial value through enhanced sales and marketing efficiency",
+        "Partnering with internal teams (partnerships, digital marketing, e-commerce, campaign) to optimize advertising campaigns and deliver high-quality insights",
+        "Supporting investment decisions at both strategic and tactical levels to achieve incremental ROI",
+        "Serving as custodian for marketing data and identifying specific business data requirements",
+        "Operating within a 'test and learn landscape' for measurement techniques"
+      ],
+      "required_skills": [
+        "Excellent SQL skills essential combined with a comprehensive understanding of database structures",
+        "Marketing attribution experience (MMM, MTA, geo lift)",
+        "Strong presentation abilities for senior leadership",
+        "Statistical software proficiency (R, Python) - preferred",
+        "Deep knowledge of e-commerce and apparel business KPIs",
+        "Experience with both retail and e-commerce models"
+      ],
+      "required_tools": [
+        "SQL",
+        "Tableau or Looker",
+        "R (preferred)",
+        "Python (preferred)"
+      ],
+      "source": "https://sportstechjobs.com/digital-marketing-analytics-manager-gymshark/66dd49933a1d949a40482ec1"
+    },
+    {
+      "title": "Athlete/Influencer Marketing Associate (Gym & Lifting)",
+      "posted_date": "October 2025",
+      "location": "New York, NY",
+      "employment_type": "Full-time",
+      "note": "This role focuses on influencer partnerships rather than data/analytics",
+      "source": "Multiple job boards via web search"
+    },
+    {
+      "title": "Assistant Merchandise Planner - NAM",
+      "posted_date": "1 week ago (late November 2025)",
+      "location": "New York, NY",
+      "department": "Merchandising/Planning",
+      "note": "While not directly marketing, merchandising planning often involves data analysis",
+      "source": "https://www.linkedin.com/jobs/search/?keywords=gymshark"
+    },
+    {
+      "title": "Floor Lead - Roosevelt Field, Long Island, New York",
+      "posted_date": "2 weeks ago (mid-November 2025)",
+      "location": "New York, NY",
+      "department": "Retail Operations",
+      "note": "Not a marketing/analytics role - included for completeness",
+      "source": "https://www.linkedin.com/jobs/search/?keywords=gymshark"
+    }
+  ],
+  "recent_hires": [
+    {
+      "name": "Carly Natalizia",
+      "title": "Chief Digital Officer",
+      "start_date": "Promoted to CDO in March 2024 (joined Gymshark in 2022)",
+      "tenure_at_gymshark": "2+ years",
+      "previous_positions_at_gymshark": [
+        "VP Marketing, International (2022)",
+        "Global Marketing Director (January 2024 - March 2024)"
+      ],
+      "previous_company": "The Very Group (Chief Marketing Officer) - 15+ years in financial services prior (Bank of America, MBNA, Virgin Money)",
+      "responsibilities": "Oversees entire digital ecosystem including digital marketing and digital customer experience; responsible for optimizing the digital journey and ensuring digital growth",
+      "reports_to": "Ben Francis, Founder & CEO",
+      "source": "https://www.retailgazette.co.uk/blog/2024/03/gymshark-digital-officer/"
+    },
+    {
+      "name": "Rich Sanders",
+      "title": "Chief Financial Officer",
+      "start_date": "September 2025",
+      "tenure_at_gymshark": "New hire (3 months)",
+      "note": "While CFO role is not directly marketing, financial leadership often impacts marketing budget and ROI analysis",
+      "source": "https://www.linkedin.com/company/gymshark"
+    }
+  ],
+  "current_team": {
+    "total_employees": 2293,
+    "marketing_team_size": "Not publicly disclosed - unable to verify exact count",
+    "offices": [
+      "Solihull, UK (headquarters)",
+      "London, UK",
+      "Denver, CO, USA",
+      "New York, NY, USA",
+      "Hong Kong",
+      "Mauritius"
+    ],
+    "leadership": [
+      {
+        "name": "Ben Francis MBE",
+        "title": "Founder & Chief Executive Officer",
+        "tenure": "Founded in 2012 (13 years)",
+        "source": "https://www.gymshark.com/pages/about-us"
+      },
+      {
+        "name": "Noel Mack",
+        "title": "Chief Brand Officer",
+        "tenure": "7+ years at Gymshark (joined May 2017)",
+        "start_date": "May 2017 as Brand Director, promoted to CBO in July 2018",
+        "previous_company": "Co-Founder & Creative Director at R3Brand Ltd (9 years) - worked with Ministry of Sound, ROCNation, and Gymshark as clients",
+        "background": "Music industry background including work with Roc Nation, Ministry of Sound, O.V.O.; produced platinum-selling record",
+        "responsibilities": "Responsible for all things 'brand' globally, with particular focus on marketing to Digital Natives through Social Media, Influencer Marketing, Creative and PR",
+        "achievements": "Led Gymshark through unicorn status (£1 billion valuation in 2020); recognized as UK Top 50 customer experience professional; Adweek recognition for pandemic leadership",
+        "source": "https://www.theindustry.fashion/the-interview-noel-mack-chief-brand-officer-gymshark/"
+      },
+      {
+        "name": "Carly Natalizia",
+        "title": "Chief Digital Officer",
+        "tenure": "2+ years (joined 2022, promoted to CDO March 2024)",
+        "previous_positions": "VP Marketing International, Global Marketing Director",
+        "previous_company": "The Very Group (CMO)",
+        "reports_to": "Ben Francis, CEO",
+        "responsibilities": "Digital marketing, digital customer experience, digital journey optimization, digital growth",
+        "source": "https://www.retailgazette.co.uk/blog/2024/03/gymshark-digital-officer/"
+      },
+      {
+        "name": "John Douglas",
+        "title": "Chief Technology Officer",
+        "source": "https://www.gymshark.com/pages/about-us"
+      },
+      {
+        "name": "Laurent Madelaine",
+        "title": "Chief Supply Chain Officer",
+        "source": "https://www.gymshark.com/pages/about-us"
+      },
+      {
+        "name": "Sian Keane",
+        "title": "Chief People Officer",
+        "source": "https://www.gymshark.com/pages/about-us"
+      },
+      {
+        "name": "Rich Sanders",
+        "title": "Chief Financial Officer",
+        "tenure": "New hire (September 2025)",
+        "source": "https://www.linkedin.com/company/gymshark"
+      },
+      {
+        "name": "Hannah Mercer",
+        "title": "General Manager, Wholesale and Retail",
+        "source": "https://www.linkedin.com/company/gymshark"
+      },
+      {
+        "name": "Mitch Healey",
+        "title": "Retail & Wholesale Director, North America",
+        "source": "https://www.linkedin.com/company/gymshark"
+      }
+    ],
+    "team_structure": {
+      "marketing_analytics_function": {
+        "description": "Marketing Analytics team exists within broader Analytics function",
+        "head_of_insights_north_america": {
+          "title": "Head of Insights for North America",
+          "location": "Denver, CO",
+          "reports": "Marketing Analytics Manager and up to 4 analysts"
+        },
+        "digital_channels_director": {
+          "title": "Digital Channels Director",
+          "location": "Solihull, UK",
+          "reports": "Digital Marketing Analytics Manager and team"
+        }
+      }
+    },
+    "notable_observations": [
+      "Strong C-suite presence with dedicated Chief Brand Officer and Chief Digital Officer roles",
+      "Marketing analytics function spans both UK (Solihull) and US (Denver) offices",
+      "Team structure suggests at least 2 analytics managers plus multiple analyst roles",
+      "Recent creation of Chief Digital Officer role (March 2024) indicates focus on digital transformation",
+      "New CFO hire (September 2025) may signal financial/operational changes affecting marketing budgets",
+      "Active hiring for analytics roles suggests growing data-driven marketing focus",
+      "Use of advanced tools (Alteryx, Tableau, SQL, Python/R) indicates sophisticated analytics capability"
+    ],
+    "notable_gaps": [
+      "Unable to verify exact marketing team size due to LinkedIn access restrictions",
+      "Limited visibility into recent hires below C-suite level",
+      "No public information about specific marketing operations or marketing automation roles",
+      "Unable to confirm if Digital Marketing Analytics Manager position (posted Sep 2024) was filled"
+    ]
+  },
+  "technology_stack": {
+    "analytics_tools": [
+      "Google Analytics",
+      "Alteryx (process automation and data blending)",
+      "SQL databases",
+      "Tableau (data visualization)",
+      "Looker (data visualization)",
+      "Power BI (mentioned as alternative)",
+      "Google Data Studio (mentioned as alternative)",
+      "R (statistical analysis)",
+      "Python (statistical analysis)"
+    ],
+    "marketing_platforms_referenced_in_jobs": [
+      "Facebook / Instagram (Meta Ads)",
+      "Google Ads",
+      "TikTok",
+      "DSPs (Demand Side Platforms)",
+      "ESPs (Email Service Providers)",
+      "CDPs (Customer Data Platforms)"
+    ],
+    "attribution_methodologies": [
+      "MMM (Marketing Mix Modeling)",
+      "MTA (Multi-Touch Attribution)",
+      "Geo lift testing"
+    ]
+  },
+  "salary_ranges_found": {
+    "Marketing Analytics Manager (North America)": "$88,000 - $126,000 annually",
+    "Digital Marketing Analytics Manager (UK)": "$45,000 - $60,000 (£45,000-£60,000 estimated)",
+    "Marketing Data Analyst (UK)": "Not disclosed",
+    "Marketing Analyst (general - from Indeed data)": "$73,758 per year average",
+    "Marketing Associate": "$59,274 per year",
+    "Digital Marketer (senior level)": "$204,672 per year",
+    "E-Commerce Manager": "$94,222 per year average (based on 6 salaries)"
+  },
+  "company_benefits_noted": [
+    "30 days paid time off plus birthday off",
+    "Transportation allowance",
+    "Up to $900 reimbursement toward exercise equipment purchase",
+    "Gym membership coverage",
+    "50% discount on all Gymshark products",
+    "Hybrid work arrangements (minimum 3 days on-site for UK roles)"
+  ],
+  "recent_company_news": [
+    {
+      "date": "December 13, 2025 (upcoming)",
+      "news": "Opening flagship US store in NYC on Bond Street",
+      "source": "https://www.linkedin.com/company/gymshark"
+    },
+    {
+      "date": "Recent (2025)",
+      "news": "Opened second Dubai store at Mall of the Emirates",
+      "source": "https://www.linkedin.com/company/gymshark"
+    },
+    {
+      "date": "September 2025",
+      "news": "Held 'Lift London' event; Announced CFO hire (Rich Sanders)",
+      "source": "https://www.linkedin.com/company/gymshark"
+    },
+    {
+      "date": "2025",
+      "news": "Launched first footwear collaboration with R.A.D®",
+      "source": "https://www.linkedin.com/company/gymshark"
+    }
+  ],
+  "sources": [
+    "https://www.linkedin.com/company/gymshark",
+    "https://www.linkedin.com/jobs/search/?keywords=gymshark",
+    "https://www.gymshark.com/pages/about-us",
+    "https://careers.gymshark.com",
+    "https://apply.gymshark.com/vacancies/319/marketing-data-analyst.html",
+    "https://www.linkedin.com/jobs/view/marketing-analytics-manager-at-gymshark-2861386851",
+    "https://sportstechjobs.com/digital-marketing-analytics-manager-gymshark/66dd49933a1d949a40482ec1",
+    "https://www.retailgazette.co.uk/blog/2024/03/gymshark-digital-officer/",
+    "https://www.theindustry.fashion/the-interview-noel-mack-chief-brand-officer-gymshark/",
+    "https://www.glassdoor.com/Jobs/Gymshark-Marketing-Jobs-EI_IE1657113.0,8_DEPT1013.htm",
+    "https://www.indeed.com/cmp/Gymshark/salaries?job_category=marketing",
+    "https://startup.jobs/marketing-analytics-manager-gymshark-3268441"
+  ],
+  "research_limitations": [
+    {
+      "limitation": "LinkedIn People tab access",
+      "impact": "Unable to view full marketing team roster with names, titles, and start dates; unable to identify employees with 'New' badges indicating recent hires"
+    },
+    {
+      "limitation": "Indeed blocked (403 error)",
+      "impact": "Could not cross-reference job postings from Indeed platform"
+    },
+    {
+      "limitation": "Glassdoor blocked (403 error)",
+      "impact": "Could not access Glassdoor job listings or salary data directly"
+    },
+    {
+      "limitation": "Gymshark careers page connection issues",
+      "impact": "Direct careers page showed 'no jobs available' or connection problems - may be temporary issue"
+    },
+    {
+      "limitation": "Limited LinkedIn job visibility without login",
+      "impact": "Could only see 2 Gymshark jobs on LinkedIn despite page indicating '34 Gymshark jobs in United States' exist"
+    },
+    {
+      "limitation": "Privacy of employee profiles",
+      "impact": "Cannot extract names and details of individual team members below C-suite without LinkedIn access"
+    },
+    {
+      "limitation": "Recent hires identification",
+      "impact": "No public announcements or press releases found for individual marketing/analytics hires in last 6 months (June-December 2025) below executive level"
+    }
+  ],
+  "notes": "Research conducted December 3, 2025. Gymshark is actively hiring for marketing analytics roles, with at least 3 relevant positions identified (though one may be filled). The company has sophisticated data infrastructure with roles requiring advanced technical skills (SQL, Python/R, Tableau, Alteryx). Strong leadership team with dedicated Chief Brand Officer (Noel Mack) and newly created Chief Digital Officer role (Carly Natalizia, promoted March 2024) indicates strategic focus on digital transformation and brand building. Marketing analytics function is distributed across UK and US offices with management positions in both locations. Salary ranges are competitive, particularly for senior roles. However, limited public information available about team structure and recent hires below C-suite level due to access restrictions on job boards and LinkedIn. Company is experiencing growth with new store openings and expanding international presence."
+}
