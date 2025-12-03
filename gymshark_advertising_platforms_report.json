@@ -1,0 +1,204 @@
+{
+  "company_domain": "gymshark.com",
+  "research_date": "2025-12-03",
+  "platforms": [
+    {
+      "name": "Google Ads & Google Analytics",
+      "campaign_types": ["Search", "Display", "Remarketing", "Performance tracking"],
+      "detection_method": "Multiple Google cookies detected in cookie policy (_ga, _ga_xxx, _gcl_au) + Google Analytics explicitly mentioned in privacy notice",
+      "activity_status": "Active - tracking cookies present",
+      "technical_details": {
+        "cookies": ["_ga", "_ga_xxx", "_gcl_au"],
+        "purposes": ["User distinction", "Campaign tracking", "Ad efficiency experiments"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy",
+        "https://support.gymshark.com/en-US/pages/customer-app-marketing-promotions-events-and-social-media-privacy-notice"
+      ]
+    },
+    {
+      "name": "Meta (Facebook & Instagram)",
+      "detection_method": "Facebook Pixel detected via _fbp cookie in cookie policy",
+      "activity_status": "Active - pixel implemented for real-time bidding",
+      "technical_details": {
+        "cookies": ["_fbp"],
+        "purposes": ["Real-time bidding", "Third-party advertising", "Retargeting"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ],
+      "notes": "Unable to verify ad volume via Facebook Ads Library (access blocked)"
+    },
+    {
+      "name": "TikTok Ads",
+      "detection_method": "TikTok Pixel detected via multiple cookies (_ttp, _tt_enable_cookie, ttcsid)",
+      "activity_status": "Active - pixel implemented for advertising and analytics",
+      "technical_details": {
+        "cookies": ["_ttp", "_tt_enable_cookie", "ttcsid"],
+        "purposes": ["Advertising", "Analytics", "User tracking"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ],
+      "notes": "TikTok Ads Library inaccessible (403 error) - unable to verify current ad campaigns"
+    },
+    {
+      "name": "Microsoft Bing Ads",
+      "detection_method": "Bing Ads UET tags detected via multiple cookies (_uetsid, _uetvid, MSPTC, MUID)",
+      "activity_status": "Active - comprehensive Bing Ads implementation",
+      "technical_details": {
+        "cookies": ["_uetsid", "_uetvid", "MSPTC", "MUID"],
+        "purposes": ["User tracking", "Ad relevance", "Visitor engagement", "Cross-device tracking"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ]
+    },
+    {
+      "name": "YouTube Advertising",
+      "detection_method": "Multiple YouTube/Google cookies for video advertising and tracking",
+      "activity_status": "Active - video advertising and embedded content tracking",
+      "technical_details": {
+        "cookies": ["__Secure-ROLLOUT_TOKEN", "VISITOR_PRIVACY_METADATA", "VISITOR_INFO1_LIVE", "YSC"],
+        "purposes": ["Feature rollout", "Privacy settings", "Analytics", "Embedded video tracking"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ]
+    },
+    {
+      "name": "mParticle (Customer Data Platform)",
+      "detection_method": "mParticle SDK detected in website source code with production configuration",
+      "activity_status": "Active - central data collection hub",
+      "technical_details": {
+        "implementation": "SDK loaded from jssdkcdns.mparticle.com",
+        "configuration": "planId: gymshark_data_plan_shop",
+        "cookies": ["mParticleCustomFlags"],
+        "purposes": ["Customer data orchestration", "Third-party ID capture", "Cross-platform tracking"]
+      },
+      "sources": [
+        "https://uk.gymshark.com",
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ],
+      "notes": "Acts as central hub distributing data to other advertising platforms"
+    },
+    {
+      "name": "Braze (Customer Engagement Platform)",
+      "detection_method": "Braze/Appboy SDK detected in website source code + cookie policy",
+      "activity_status": "Active - messaging and personalization",
+      "technical_details": {
+        "implementation": "window.braze and window.appboy references",
+        "cookies": ["ab.storage.device.id"],
+        "purposes": ["Email/SMS/push messaging", "Device-based targeting", "Customer engagement campaigns"]
+      },
+      "sources": [
+        "https://uk.gymshark.com",
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ]
+    },
+    {
+      "name": "Dynamic Yield (Personalization Platform)",
+      "detection_method": "Multiple Dynamic Yield cookies detected in cookie policy",
+      "activity_status": "Active - website personalization and targeting",
+      "technical_details": {
+        "cookies": ["_dyjsession", "_dyid", "dy_fs_page", "_dy_geo", "_dycnst"],
+        "purposes": ["Product recommendation", "Content personalization", "Ad efficiency optimization", "Behavioral tracking"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ]
+    },
+    {
+      "name": "Rakuten Advertising",
+      "detection_method": "Explicitly mentioned in privacy notice as data collection partner",
+      "activity_status": "Active - affiliate and display advertising",
+      "technical_details": {
+        "purposes": ["Data collection during site interaction", "Affiliate marketing", "Display advertising"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/customer-app-marketing-promotions-events-and-social-media-privacy-notice"
+      ]
+    },
+    {
+      "name": "Amazon Associates (Affiliate Marketing)",
+      "detection_method": "Amazon advertising cookies detected in cookie policy",
+      "activity_status": "Active - affiliate marketing program",
+      "technical_details": {
+        "cookies": ["ar_debug", "ad-privacy", "ad-id"],
+        "purposes": ["Affiliate marketing", "Ad tracking"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ]
+    },
+    {
+      "name": "AppLovin (Mobile Marketing)",
+      "detection_method": "AppLovin cookie detected in cookie policy",
+      "activity_status": "Active - mobile user acquisition",
+      "technical_details": {
+        "cookies": ["axwrt"],
+        "purposes": ["Mobile marketing", "Analytics", "User acquisition"]
+      },
+      "sources": [
+        "https://support.gymshark.com/en-US/pages/cookie-policy"
+      ]
+    }
+  ],
+  "platforms_checked_not_found": [
+    "Pinterest Ads - No cookies or mentions in privacy/cookie policy",
+    "LinkedIn Ads - No cookies or mentions in privacy/cookie policy",
+    "Snapchat Ads - No cookies or mentions in privacy/cookie policy",
+    "Twitter/X Ads - Mentioned in privacy policy as social media platform but no advertising cookies detected",
+    "Reddit Ads - Not detected",
+    "Taboola/Outbrain - Not detected",
+    "Criteo - Not detected"
+  ],
+  "research_limitations": [
+    {
+      "source": "BuiltWith",
+      "status": "Blocked by bot protection/CAPTCHA",
+      "impact": "Could not verify technology stack via this aggregator"
+    },
+    {
+      "source": "Wappalyzer",
+      "status": "Service unavailable (503 error)",
+      "impact": "Could not verify technology stack via this aggregator"
+    },
+    {
+      "source": "Facebook Ads Library",
+      "status": "Access blocked",
+      "impact": "Unable to verify current ad volume or creative examples"
+    },
+    {
+      "source": "Google Ads Transparency Center",
+      "status": "Search results did not load properly",
+      "impact": "Unable to verify verified advertiser status or campaign details"
+    },
+    {
+      "source": "TikTok Ads Library",
+      "status": "Access forbidden (403 error)",
+      "impact": "Unable to verify current TikTok ad campaigns"
+    },
+    {
+      "source": "Gymshark main website (gymshark.com, us.gymshark.com)",
+      "status": "Multiple 403/503 errors and bot protection",
+      "impact": "Limited direct pixel verification - relied on UK site and privacy documentation"
+    }
+  ],
+  "key_findings": {
+    "primary_advertising_platforms": [
+      "Google Ads (Search, Display, Shopping, YouTube)",
+      "Meta (Facebook & Instagram)",
+      "TikTok",
+      "Microsoft Bing Ads"
+    ],
+    "data_infrastructure": [
+      "mParticle serves as central customer data platform",
+      "Braze handles customer engagement and messaging",
+      "Dynamic Yield manages personalization and targeting"
+    ],
+    "advertising_strategy_notes": "Gymshark employs a comprehensive multi-platform advertising approach with heavy emphasis on paid search (Google, Bing), social media advertising (Meta, TikTok, YouTube), and sophisticated data infrastructure (mParticle as CDP). The presence of Dynamic Yield indicates focus on personalized customer experiences. Mobile marketing via AppLovin suggests mobile app user acquisition strategy. Affiliate programs running through Rakuten and Amazon.",
+    "relative_platform_investment": "Unable to determine relative spend or ad volume due to ad library access restrictions. All platforms show active implementation via cookies/pixels, suggesting ongoing campaigns across all channels."
+  },
+  "notes": "Research conducted via privacy policy and cookie policy documentation due to access restrictions on primary research tools (BuiltWith, ad libraries, main website). All platforms listed have verified technical implementation via cookies or explicit privacy policy mentions. The actual ad volume and campaign details could not be verified due to access limitations on ad transparency tools. Gymshark appears to use a sophisticated martech stack with centralized data collection (mParticle) feeding multiple advertising and personalization platforms."
+}
