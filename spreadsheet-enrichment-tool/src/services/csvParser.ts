@@ -1,5 +1,6 @@
 import Papa from 'papaparse';
-import { TableRow, Column, DataType } from '../types';
+import type { TableRow, Column, DataType } from '../types';
+import { DataType as DataTypeValues } from '../types';
 
 export const parseCSV = (file: File): Promise<{ data: TableRow[]; columns: Column[] }> => {
   return new Promise((resolve, reject) => {
@@ -56,16 +57,16 @@ export const detectDataType = (data: TableRow[], columnName: string): DataType =
   }
 
   const total = samples.filter(v => v && String(v).trim() !== '').length;
-  if (total === 0) return DataType.TEXT;
+  if (total === 0) return DataTypeValues.TEXT;
 
   // If more than 70% of samples match a type, classify as that type
   const threshold = 0.7;
 
-  if (urlCount / total > threshold) return DataType.URL;
-  if (numberCount / total > threshold) return DataType.NUMBER;
-  if (dateCount / total > threshold) return DataType.DATE;
+  if (urlCount / total > threshold) return DataTypeValues.URL;
+  if (numberCount / total > threshold) return DataTypeValues.NUMBER;
+  if (dateCount / total > threshold) return DataTypeValues.DATE;
 
-  return DataType.TEXT;
+  return DataTypeValues.TEXT;
 };
 
 const isURL = (str: string): boolean => {
@@ -116,17 +117,17 @@ export const formatCellValue = (value: any, dataType: DataType): string | number
   const strValue = String(value);
 
   switch (dataType) {
-    case DataType.NUMBER:
+    case DataTypeValues.NUMBER:
       const num = parseFloat(strValue.replace(/,/g, ''));
       return isNaN(num) ? strValue : num.toLocaleString();
 
-    case DataType.DATE:
+    case DataTypeValues.DATE:
       const date = new Date(strValue);
       if (isNaN(date.getTime())) return strValue;
       return date.toLocaleDateString();
 
-    case DataType.URL:
-    case DataType.TEXT:
+    case DataTypeValues.URL:
+    case DataTypeValues.TEXT:
     default:
       return strValue;
   }

@@ -12,8 +12,7 @@ export interface ScrapedContent {
 
 export const scrapeWebsite = async (
   domain: string,
-  config: SpiderConfig,
-  prompt?: string
+  config: SpiderConfig
 ): Promise<ScrapedContent[]> => {
   try {
     const url = new URL('https://api.spider.cloud/crawl');

@@ -12,25 +12,31 @@ export interface Column {
   enrichmentConfig?: EnrichmentConfig;
 }
 
-export enum DataType {
-  TEXT = 'text',
-  NUMBER = 'number',
-  DATE = 'date',
-  URL = 'url',
-}
+export const DataType = {
+  TEXT: 'text',
+  NUMBER: 'number',
+  DATE: 'date',
+  URL: 'url',
+} as const;
+
+export type DataType = typeof DataType[keyof typeof DataType];
 
 // Enrichment Types
-export enum EnrichmentType {
-  RESEARCH = 'research',
-  CUSTOM_LLM = 'custom_llm',
-}
+export const EnrichmentType = {
+  RESEARCH: 'research',
+  CUSTOM_LLM: 'custom_llm',
+} as const;
 
-export enum EnrichmentStatus {
-  IDLE = 'idle',
-  PROCESSING = 'processing',
-  SUCCESS = 'success',
-  ERROR = 'error',
-}
+export type EnrichmentType = typeof EnrichmentType[keyof typeof EnrichmentType];
+
+export const EnrichmentStatus = {
+  IDLE: 'idle',
+  PROCESSING: 'processing',
+  SUCCESS: 'success',
+  ERROR: 'error',
+} as const;
+
+export type EnrichmentStatus = typeof EnrichmentStatus[keyof typeof EnrichmentStatus];
 
 export interface EnrichmentConfig {
   type: EnrichmentType;
@@ -70,11 +76,13 @@ export interface APIKeys {
   model?: ClaudeModel;
 }
 
-export enum ClaudeModel {
-  HAIKU = 'claude-3-haiku-20240307',
-  SONNET = 'claude-3-5-sonnet-20241022',
-  OPUS = 'claude-3-opus-20240229',
-}
+export const ClaudeModel = {
+  HAIKU: 'claude-3-haiku-20240307',
+  SONNET: 'claude-3-5-sonnet-20241022',
+  OPUS: 'claude-3-opus-20240229',
+} as const;
+
+export type ClaudeModel = typeof ClaudeModel[keyof typeof ClaudeModel];
 
 // Context Types
 export interface AppState {
