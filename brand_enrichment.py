@@ -423,7 +423,7 @@ def get_cognism_contacts(domain: str, job_titles: List[str], api_key: str) -> Li
     try:
         response = retry_request(
             requests.post,
-            "https://app.cognism.com/api/search/contact",
+            "https://app.cognism.com/api/search/contact/search",
             headers=headers,
             json=body,
             timeout=REQUEST_TIMEOUT
