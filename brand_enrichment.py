@@ -32,16 +32,16 @@ COGNISM_API_KEY = "API-P-784f27db502d4c61a10b49d675151de6"
 
 # Target job titles for Cognism
 TARGET_JOB_TITLES = [
-    "CMO",
-    "Chief Marketing Officer",
-    "Marketing Director",
-    "Head of Marketing",
-    "Head of Digital Marketing",
-    "Digital Marketing Manager",
-    "Ecommerce Director",
-    "Head of Ecommerce",
-    "Performance Marketing Manager",
-    "Growth Marketing Manager"
+    "CEO",
+    "Chief Executive Officer",
+    "Founder",
+    "Co-Founder",
+    "Co-founder",
+    "Owner",
+    "Co-Owner",
+    "Co-owner",
+    "Managing Director",
+    "President"
 ]
 
 # Request configuration
