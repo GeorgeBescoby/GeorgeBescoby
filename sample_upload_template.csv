@@ -1,0 +1,5 @@
+type,name,company_name,company_domain,linkedin_url,email
+contact,John Smith,Gymshark,gymshark.com,https://www.linkedin.com/in/johnsmith,john.smith@gymshark.com
+contact,Jane Doe,Nike,nike.com,https://www.linkedin.com/in/janedoe,jane.doe@nike.com
+company,,Gymshark,gymshark.com,https://www.linkedin.com/company/gymshark,
+company,,Lululemon,lululemon.com,https://www.linkedin.com/company/lululemon-athletica,
