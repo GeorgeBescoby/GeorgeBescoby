@@ -38,16 +38,50 @@ class SourceResult:
     url: str
 
 
-def normalize_number(raw: str) -> tuple[str, str]:
-    """Return (digits_only, formatted) e.g. ('18005551234', '1-800-555-1234')."""
+@dataclass
+class PhoneNumber:
+    raw: str
+    digits: str       # full digits with country code, no +
+    country: str      # "US" or "UK"
+    formatted: str    # human-readable
+
+
+def normalize_number(raw: str) -> PhoneNumber:
+    """Parse a US or UK phone number into a PhoneNumber."""
     digits = re.sub(r"\D", "", raw)
+
+    # UK: +44 or 44 prefix, or 07xxx (11 digits starting 07)
+    if raw.strip().startswith("+44") or digits.startswith("44"):
+        if digits.startswith("44"):
+            digits = digits  # already has country code
+        # Ensure leading 44
+        if not digits.startswith("44"):
+            raise ValueError(f"Could not parse UK number: {raw!r}")
+        local = digits[2:]  # strip country code -> 10 digits starting 7
+        if len(local) != 10:
+            raise ValueError(f"UK number must be 10 digits after country code: {raw!r}")
+        formatted = f"+44 {local[:4]} {local[4:]}"
+        return PhoneNumber(raw, digits, "UK", formatted)
+
+    # UK local format: 07xxx xxxxxxx (11 digits starting 07)
+    if len(digits) == 11 and digits.startswith("07"):
+        local = digits[1:]  # strip leading 0 -> 7xxxxxxxxx
+        digits = "44" + local
+        formatted = f"+44 {local[:4]} {local[4:]}"
+        return PhoneNumber(raw, digits, "UK", formatted)
+
+    # US: 10 digits or 11 digits starting with 1
     if len(digits) == 10:
         digits = "1" + digits
-    if len(digits) != 11 or digits[0] != "1":
-        raise ValueError(f"Invalid US phone number: {raw!r}")
-    d = digits[1:]  # 10-digit local part
-    formatted = f"1-{d[:3]}-{d[3:6]}-{d[6:]}"
-    return digits, formatted
+    if len(digits) == 11 and digits[0] == "1":
+        d = digits[1:]
+        formatted = f"+1 ({d[:3]}) {d[3:6]}-{d[6:]}"
+        return PhoneNumber(raw, digits, "US", formatted)
+
+    raise ValueError(
+        f"Unrecognised number: {raw!r}. Supported formats: US (10/11 digits) "
+        "or UK (+44 / 07xxx)."
+    )
 
 
 def _get(url: str, timeout: int = 10) -> requests.Response | None:
@@ -60,11 +94,11 @@ def _get(url: str, timeout: int = 10) -> requests.Response | None:
 
 
 # ---------------------------------------------------------------------------
-# Source scrapers
+# Source scrapers — US
 # ---------------------------------------------------------------------------
 
-def check_800notes(digits: str, formatted: str) -> SourceResult:
-    local = digits[1:]  # 10-digit
+def check_800notes(p: PhoneNumber) -> SourceResult:
+    local = p.digits[1:]  # 10-digit
     url = f"https://800notes.com/Phone.aspx/1-{local[:3]}-{local[3:6]}-{local[6:]}"
     r = _get(url)
     name = "800notes.com"
@@ -73,7 +107,6 @@ def check_800notes(digits: str, formatted: str) -> SourceResult:
 
     soup = BeautifulSoup(r.text, "html.parser")
 
-    # Report count
     count = 0
     count_el = soup.find("span", {"id": "ctl00_ContentPlaceHolder1_lblCount"})
     if count_el:
@@ -81,7 +114,6 @@ def check_800notes(digits: str, formatted: str) -> SourceResult:
         if m:
             count = int(m.group())
 
-    # Avg rating (1=safe .. 5=spam on 800notes)
     rating = 0.0
     rating_el = soup.find("span", {"itemprop": "ratingValue"})
     if rating_el:
@@ -93,46 +125,19 @@ def check_800notes(digits: str, formatted: str) -> SourceResult:
     if count == 0:
         return SourceResult(name, False, 0.0, 0, "no reports", url)
 
-    # Normalise: 800notes rates 1 (safe) to 5 (dangerous). Map to 0–1.
     spam_score = max(0.0, (rating - 1) / 4) if rating else 0.5
     label = f"{count} reports, avg rating {rating:.1f}/5"
     return SourceResult(name, True, spam_score, count, label, url)
 
 
-def check_shouldianswer(digits: str, formatted: str) -> SourceResult:
-    local = digits[1:]
+def check_shouldianswer_us(p: PhoneNumber) -> SourceResult:
+    local = p.digits[1:]
     url = f"https://www.shouldianswer.com/phone-number/{local[:3]}-{local[3:6]}-{local[6:]}"
-    r = _get(url)
-    name = "shouldianswer.com"
-    if r is None:
-        return SourceResult(name, False, 0.0, 0, "unreachable", url)
-
-    soup = BeautifulSoup(r.text, "html.parser")
-
-    # Rating badge: "POSITIVE", "NEUTRAL", "NEGATIVE", "DANGEROUS"
-    badge = ""
-    badge_el = soup.find("span", class_=re.compile(r"badge|rating", re.I))
-    if badge_el:
-        badge = badge_el.get_text(strip=True).upper()
-
-    # Comment/report count
-    count = 0
-    count_els = soup.find_all(string=re.compile(r"comment|report", re.I))
-    for el in count_els:
-        m = re.search(r"(\d+)\s+(comment|report)", el, re.I)
-        if m:
-            count = int(m.group(1))
-            break
-
-    score_map = {"POSITIVE": 0.05, "NEUTRAL": 0.35, "NEGATIVE": 0.75, "DANGEROUS": 0.95}
-    spam_score = score_map.get(badge, 0.0 if count == 0 else 0.4)
-    label = badge if badge else ("no reports" if count == 0 else f"{count} reports")
-    found = bool(badge or count)
-    return SourceResult(name, found, spam_score, count, label, url)
+    return _shouldianswer(url)
 
 
-def check_spamcalls(digits: str, formatted: str) -> SourceResult:
-    local = digits[1:]
+def check_spamcalls(p: PhoneNumber) -> SourceResult:
+    local = p.digits[1:]
     url = f"https://spamcalls.net/en/number/{local[:3]}{local[3:6]}{local[6:]}"
     r = _get(url)
     name = "spamcalls.net"
@@ -148,7 +153,6 @@ def check_spamcalls(digits: str, formatted: str) -> SourceResult:
         if m:
             count = int(m.group(1))
 
-    # Danger level text
     danger = ""
     danger_el = soup.find(class_=re.compile(r"danger|risk|level", re.I))
     if danger_el:
@@ -162,8 +166,8 @@ def check_spamcalls(digits: str, formatted: str) -> SourceResult:
     return SourceResult(name, count > 0, spam_score, count, label, url)
 
 
-def check_nomorobo(digits: str, formatted: str) -> SourceResult:
-    local = digits[1:]
+def check_nomorobo(p: PhoneNumber) -> SourceResult:
+    local = p.digits[1:]
     url = f"https://www.nomorobo.com/lookup/{local[:3]}-{local[3:6]}-{local[6:]}"
     r = _get(url)
     name = "nomorobo.com"
@@ -171,8 +175,6 @@ def check_nomorobo(digits: str, formatted: str) -> SourceResult:
         return SourceResult(name, False, 0.0, 0, "unreachable", url)
 
     soup = BeautifulSoup(r.text, "html.parser")
-
-    # Nomorobo shows "Robocaller" or "Not a Robocaller" prominently
     text = soup.get_text(" ", strip=True).upper()
     is_robocaller = "ROBOCALLER" in text and "NOT A ROBOCALLER" not in text
     is_clean = "NOT A ROBOCALLER" in text
@@ -192,7 +194,139 @@ def check_nomorobo(digits: str, formatted: str) -> SourceResult:
     return SourceResult(name, is_robocaller or is_clean, spam_score, count, label, url)
 
 
-SOURCES = [check_800notes, check_shouldianswer, check_spamcalls, check_nomorobo]
+# ---------------------------------------------------------------------------
+# Source scrapers — UK
+# ---------------------------------------------------------------------------
+
+def _shouldianswer(url: str) -> SourceResult:
+    """Shared logic for shouldianswer.com (works for both US and UK URLs)."""
+    r = _get(url)
+    name = "shouldianswer.com"
+    if r is None:
+        return SourceResult(name, False, 0.0, 0, "unreachable", url)
+
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    badge = ""
+    badge_el = soup.find("span", class_=re.compile(r"badge|rating", re.I))
+    if badge_el:
+        badge = badge_el.get_text(strip=True).upper()
+
+    count = 0
+    for el in soup.find_all(string=re.compile(r"comment|report", re.I)):
+        m = re.search(r"(\d+)\s+(comment|report)", el, re.I)
+        if m:
+            count = int(m.group(1))
+            break
+
+    score_map = {"POSITIVE": 0.05, "NEUTRAL": 0.35, "NEGATIVE": 0.75, "DANGEROUS": 0.95}
+    spam_score = score_map.get(badge, 0.0 if count == 0 else 0.4)
+    label = badge if badge else ("no reports" if count == 0 else f"{count} reports")
+    return SourceResult(name, bool(badge or count), spam_score, count, label, url)
+
+
+def check_shouldianswer_uk(p: PhoneNumber) -> SourceResult:
+    local = p.digits[2:]  # strip 44 -> 10 digits starting with 7
+    # shouldianswer.co.uk uses 07xxx format
+    number_str = "0" + local
+    url = f"https://www.shouldianswer.co.uk/phone-number/{number_str}"
+    return _shouldianswer(url)
+
+
+def check_whocalleduk(p: PhoneNumber) -> SourceResult:
+    local = p.digits[2:]  # strip 44
+    number_str = "0" + local
+    url = f"https://who-called.co.uk/number/{number_str}"
+    r = _get(url)
+    name = "who-called.co.uk"
+    if r is None:
+        return SourceResult(name, False, 0.0, 0, "unreachable", url)
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    text = soup.get_text(" ", strip=True)
+
+    count = 0
+    m = re.search(r"(\d+)\s+(comment|report|call)", text, re.I)
+    if m:
+        count = int(m.group(1))
+
+    # Look for danger rating badge
+    danger = ""
+    for el in soup.find_all(class_=re.compile(r"label|badge|rating|danger", re.I)):
+        t = el.get_text(strip=True).upper()
+        if t in ("SAFE", "NEUTRAL", "UNSAFE", "DANGEROUS", "SPAM", "SCAM"):
+            danger = t
+            break
+
+    danger_map = {"SAFE": 0.05, "NEUTRAL": 0.3, "UNSAFE": 0.75, "DANGEROUS": 0.9,
+                  "SPAM": 0.85, "SCAM": 0.95}
+    spam_score = danger_map.get(danger, 0.5 if count > 0 else 0.0)
+    label = f"{danger}, {count} reports" if danger else (
+        f"{count} reports" if count else "no reports"
+    )
+    return SourceResult(name, count > 0 or bool(danger), spam_score, count, label, url)
+
+
+def check_ofcom_uk(p: PhoneNumber) -> SourceResult:
+    """Check UK phone number type via Ofcom's number checker (flags non-geographic/premium numbers)."""
+    local = p.digits[2:]  # strip 44 -> 10 digits starting 7
+    number_str = "0" + local
+    url = f"https://checker.ofcom.org.uk/en-gb/phone-checker?number={number_str}"
+    r = _get(url)
+    name = "ofcom.org.uk"
+    if r is None:
+        return SourceResult(name, False, 0.0, 0, "unreachable", url)
+
+    text = r.text.upper()
+    # Ofcom labels premium/non-geographic numbers which are commonly used for spam
+    is_premium = "PREMIUM" in text or "09" in number_str[:2]
+    is_mobile = number_str.startswith("07")
+    is_geographic = "GEOGRAPHIC" in text
+
+    if is_premium:
+        spam_score, label = 0.7, "premium rate number (high spam risk)"
+    elif is_mobile:
+        spam_score, label = 0.1, "mobile number (low inherent risk)"
+    elif is_geographic:
+        spam_score, label = 0.05, "geographic number"
+    else:
+        spam_score, label = 0.3, "non-geographic number"
+
+    return SourceResult(name, True, spam_score, 0, label, url)
+
+
+def check_spamcalls_uk(p: PhoneNumber) -> SourceResult:
+    local = p.digits[2:]  # strip 44
+    number_str = "0" + local
+    url = f"https://spamcalls.net/en/number/{number_str.replace('-', '')}"
+    r = _get(url)
+    name = "spamcalls.net"
+    if r is None:
+        return SourceResult(name, False, 0.0, 0, "unreachable", url)
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    count = 0
+    count_el = soup.find(string=re.compile(r"\d+\s+report", re.I))
+    if count_el:
+        m = re.search(r"(\d+)\s+report", count_el, re.I)
+        if m:
+            count = int(m.group(1))
+
+    danger = ""
+    danger_el = soup.find(class_=re.compile(r"danger|risk|level", re.I))
+    if danger_el:
+        danger = danger_el.get_text(strip=True).upper()
+
+    danger_map = {"LOW": 0.1, "MEDIUM": 0.5, "HIGH": 0.85, "VERY HIGH": 0.95}
+    spam_score = danger_map.get(danger, 0.5 if count > 0 else 0.0)
+    label = f"{danger} risk, {count} reports" if danger else (
+        f"{count} reports" if count else "no reports"
+    )
+    return SourceResult(name, count > 0, spam_score, count, label, url)
+
+
+US_SOURCES = [check_800notes, check_shouldianswer_us, check_spamcalls, check_nomorobo]
+UK_SOURCES = [check_shouldianswer_uk, check_whocalleduk, check_spamcalls_uk, check_ofcom_uk]
 
 
 # ---------------------------------------------------------------------------
@@ -264,8 +398,8 @@ def print_report(number_raw: str, results: list[SourceResult], score: float, ver
         print(f"      └─ {r.url}")
     print()
     print("  NOTE: This is an estimate based on public crowd-sourced")
-    print("  reports. Carrier spam flags (Hiya, First Orion, TNS)")
-    print("  are proprietary and cannot be read without a paid API.")
+    print("  reports. Carrier-level spam flags are proprietary and")
+    print("  cannot be read without a paid business API.")
     print("=" * 56)
     print()
 
@@ -276,28 +410,29 @@ def print_report(number_raw: str, results: list[SourceResult], score: float, ver
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Check if a phone number is likely flagged as spam."
+        description="Check if a phone number is likely flagged as spam. Supports US and UK numbers."
     )
-    parser.add_argument("number", nargs="+", help="Phone number(s) to check (US only)")
+    parser.add_argument("number", nargs="+", help="Phone number(s) to check")
     parser.add_argument("--delay", type=float, default=1.5,
                         help="Seconds between source requests (default: 1.5)")
     args = parser.parse_args()
 
     for raw in args.number:
         try:
-            digits, formatted = normalize_number(raw)
+            p = normalize_number(raw)
         except ValueError as e:
             print(f"Error: {e}")
             continue
 
+        sources = UK_SOURCES if p.country == "UK" else US_SOURCES
         results: list[SourceResult] = []
-        for checker in SOURCES:
-            res = checker(digits, formatted)
+        for checker in sources:
+            res = checker(p)
             results.append(res)
             time.sleep(args.delay)
 
         score, verdict = aggregate(results)
-        print_report(raw, results, score, verdict)
+        print_report(p.formatted, results, score, verdict)
 
 
 if __name__ == "__main__":
