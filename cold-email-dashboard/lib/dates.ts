@@ -32,7 +32,8 @@ export function londonDay(instant: Date = new Date()): Day {
 }
 
 export function today(): Day {
-  return process.env.DASHBOARD_TODAY || londonDay();
+  const pinned = typeof process !== "undefined" ? process.env?.DASHBOARD_TODAY : undefined;
+  return pinned || londonDay();
 }
 
 export function addDays(d: Day, n: number): Day {

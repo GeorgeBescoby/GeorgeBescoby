@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS campaign_snapshots (
 -- Current state of every lead that has replied or been categorised.
 CREATE TABLE IF NOT EXISTS leads (
   campaign_id INTEGER NOT NULL,
-  email TEXT NOT NULL,            -- lower-cased; leads are identified by (campaign, email)
+  email TEXT NOT NULL,            -- leadKey(email): hash, never the address; leads are identified by (campaign, key)
   lead_id INTEGER,                -- Smartlead lead id, when known
   first_name TEXT,
   last_name TEXT,

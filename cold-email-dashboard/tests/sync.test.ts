@@ -2,6 +2,7 @@
 // shown in the official docs (including the variants that disagree).
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createMemoryDb } from "@/lib/db";
+import { leadKey } from "@/lib/smartlead/store";
 import { runSync } from "@/lib/smartlead/sync";
 
 const routes: Record<string, (q: URLSearchParams) => unknown> = {
@@ -71,11 +72,12 @@ describe("runSync", () => {
       { campaign_id: 13, day: "2026-09-23", sent: 400, unique_sent: 170, bounced: 8 }, // summed windows
     ]);
 
-    const leads = (await db.execute("SELECT email, category, replied, reply_at, download_date_field FROM leads ORDER BY email")).rows.map((r) => ({ ...r }));
+    const leads = (await db.execute("SELECT email, category, replied, reply_at, download_date_field FROM leads")).rows.map((r) => ({ ...r }));
+    leads.sort((a, b) => String(a.category).localeCompare(String(b.category)));
     expect(leads).toEqual([
-      { email: "amy@a.com", category: "Interested", replied: 1, reply_at: "2026-09-04T08:30:00Z", download_date_field: null },
-      { email: "bob@b.com", category: "Out Of Office", replied: 1, reply_at: "2026-09-23T21:55:00.000Z", download_date_field: null },
-      { email: "cat@c.com", category: "Downloaded", replied: 0, reply_at: null, download_date_field: "2026-09-06" },
+      { email: leadKey("cat@c.com"), category: "Downloaded", replied: 0, reply_at: null, download_date_field: "2026-09-06" },
+      { email: leadKey("amy@a.com"), category: "Interested", replied: 1, reply_at: "2026-09-04T08:30:00Z", download_date_field: null },
+      { email: leadKey("bob@b.com"), category: "Out Of Office", replied: 1, reply_at: "2026-09-23T21:55:00.000Z", download_date_field: null },
     ]);
 
     const events = (await db.execute("SELECT email, category, occurred_at, source FROM lead_category_events ORDER BY email")).rows.length;

@@ -17,7 +17,7 @@ export type SnapshotRow = {
 
 export type LeadRow = {
   campaign_id: number;
-  email: string; // lower-cased, identifies the lead within a campaign
+  email: string; // hashed email key (leadKey), identifies the lead within a campaign
   lead_id: number | null;
   first_name: string | null;
   last_name: string | null;

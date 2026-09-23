@@ -3,7 +3,7 @@ import { DEFAULT_SETTINGS } from "@/config/defaults";
 import { createMemoryDb } from "@/lib/db";
 import { computeLeadDates } from "@/lib/metrics/compute";
 import { loadDataset } from "@/lib/repository";
-import { categoryEventStatement, leadUpsertStatement } from "@/lib/smartlead/store";
+import { categoryEventStatement, leadKey, leadUpsertStatement } from "@/lib/smartlead/store";
 import { handleWebhook } from "@/lib/smartlead/webhook";
 
 describe("webhook + sync merge", () => {
@@ -39,7 +39,9 @@ describe("webhook + sync merge", () => {
     const data = await loadDataset(db);
     expect(data.leads).toHaveLength(1); // one lead, not a duplicate
     const l = data.leads[0];
-    expect(l).toMatchObject({ email: "jane@shop.com", lead_id: 99, first_name: "Jane", company: "Shop", replied: 1, reply_at: "2026-09-03T09:15:00Z" });
+    expect(l.email).toBe(leadKey("jane@shop.com"));
+    expect(l.email).not.toContain("@");
+    expect(l).toMatchObject({ lead_id: 99, first_name: "Jane", company: "Shop", replied: 1, reply_at: "2026-09-03T09:15:00Z" });
 
     const dates = computeLeadDates(l, data.categoryEvents, DEFAULT_SETTINGS);
     expect(dates.replyDay).toBe("2026-09-03");

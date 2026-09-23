@@ -1,6 +1,15 @@
 // Writes to the leads / lead_category_events tables. Shared by the daily sync
 // and the webhook handler so both merge into the same records.
+import crypto from "node:crypto";
 import type { Client, InStatement } from "@libsql/client";
+
+/**
+ * Leads are stored under a one-way hash of their email, never the address
+ * itself: enough to match a webhook to the daily sync, nothing to leak.
+ */
+export function leadKey(email: string): string {
+  return crypto.createHash("sha256").update(email.trim().toLowerCase()).digest("hex").slice(0, 20);
+}
 
 export type LeadUpsert = {
   campaign_id: number;
@@ -37,7 +46,7 @@ export function leadUpsertStatement(l: LeadUpsert, nowIso: string): InStatement 
         updated_at = excluded.updated_at`,
     args: {
       campaign_id: l.campaign_id,
-      email: l.email.trim().toLowerCase(),
+      email: leadKey(l.email),
       lead_id: l.lead_id ?? null,
       first_name: l.first_name ?? null,
       last_name: l.last_name ?? null,
@@ -63,7 +72,7 @@ export function categoryEventStatement(
 ): InStatement {
   return {
     sql: `INSERT OR IGNORE INTO lead_category_events (campaign_id, email, category, occurred_at, source) VALUES (?, ?, ?, ?, ?)`,
-    args: [campaign_id, email.trim().toLowerCase(), category, occurred_at, source],
+    args: [campaign_id, leadKey(email), category, occurred_at, source],
   };
 }
 
