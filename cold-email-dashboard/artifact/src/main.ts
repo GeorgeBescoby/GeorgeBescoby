@@ -334,14 +334,15 @@ function render() {
   const badge =
     state.mode === "sample"
       ? `<span class="badge sample" title="Generated example numbers, not your campaigns">Sample data</span>`
-      : `<span class="badge live">Live${state.sync?.finished_at ? ` · synced ${new Date(state.sync.finished_at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}` : ""}</span>`;
+      : `<span class="badge live">Live data${state.sync?.finished_at ? ` · synced ${new Date(state.sync.finished_at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}` : ""}</span>`;
   const tabs: [Tab, string][] = [["overview", "Overview"], ["campaigns", "Campaigns"], ["settings", "Settings"]];
-  app.innerHTML = `<header class="top">
-      <div class="brand">ASK BOSCO <span>Cold email economics</span></div>
+  app.innerHTML = `<header class="top"><div class="wrap">
+      <div class="brand"><b>ASK</b><strong>BOSCO</strong></div>
+      <span class="brand-sub">Cold email economics</span>
       <nav class="tabs" aria-label="Sections">${tabs.map(([t, l]) => `<a href="#${t}" aria-current="${state.tab === t ? "page" : "false"}">${l}</a>`).join("")}</nav>
       ${badge}
-    </header>
-    <main>${state.tab === "overview" ? overview() : state.tab === "campaigns" ? campaigns() : settingsView()}</main>`;
+    </div></header>
+    <main class="wrap">${state.tab === "overview" ? overview() : state.tab === "campaigns" ? campaigns() : settingsView()}</main>`;
   window.scrollTo(0, scrollY);
 }
 
