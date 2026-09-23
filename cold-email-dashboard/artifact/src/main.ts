@@ -25,7 +25,8 @@ const state = {
   leadDocs: [] as LeadsDoc[],
   sync: null as SyncMeta,
   db: null as any,
-  dbState: "connecting" as "connecting" | "ready" | "absent",
+  // ready = claude.ai storage; static = data embedded in the Cloudflare site build
+  dbState: "connecting" as "connecting" | "ready" | "absent" | "static",
   settingsLoaded: false,
   readOnly: false,
   sort: { key: "emailsSent" as keyof CampaignKpis, dir: -1 as 1 | -1 },
@@ -276,6 +277,7 @@ function settingsView() {
     : "The daily sync hasn’t run yet.";
   return `${heading("Settings", "Costs and definitions used by every view.", false)}
     ${state.dbState === "absent" ? `<p class="note warn">Settings can’t be saved in this view. Open the page on claude.ai to edit them.</p>` : ""}
+    ${state.dbState === "static" ? `<p class="note">To change these, edit <strong>dashboard.settings.json</strong> in the GitHub repo. The site rebuilds with them on the next daily run, or straight away if you run the workflow by hand.</p>` : ""}
     ${state.readOnly ? `<p class="note">You can view these settings but not change them.</p>` : ""}
     <form id="settings-form" autocomplete="off">
       <section class="panel">
@@ -317,12 +319,13 @@ function settingsView() {
         </div>
         <p class="fine">Category names must match Smartlead (case doesn’t matter).</p>
       </section>
-      <div class="actions">
+      ${state.dbState === "static" ? "" : `      <div class="actions">
         <button type="submit" class="primary" ${dis}>Save settings</button>
         <button type="button" id="reset" ${dis}>Reset to defaults</button>
         ${state.flash?.ok ? `<span class="ok" role="status">✓ ${esc(state.flash.ok)}</span>` : ""}
         ${state.flash?.error ? `<span class="err" role="alert">${esc(state.flash.error)}</span>` : ""}
       </div>
+`}
     </form>`;
 }
 
@@ -516,9 +519,23 @@ async function connect() {
   }
 }
 
+/** Site build: data and settings are embedded in the page by scripts/build-site.ts. */
+function loadEmbedded(): boolean {
+  const e = (window as any).__DASHBOARD__;
+  if (!e) return false;
+  state.dbState = "static";
+  state.mode = e.dataMode === "live" ? "live" : "sample";
+  state.settings = { ...structuredClone(DEFAULT_SETTINGS), ...(e.settings ?? {}) };
+  state.campaignDocs = e.campaigns ?? [];
+  state.leadDocs = e.leads ?? [];
+  state.sync = e.sync ?? null;
+  return true;
+}
+
 try {
   const p = localStorage.getItem("ced-period");
   if (p) state.period = parsePeriodKey(p);
 } catch { /* storage unavailable */ }
+const isSite = loadEmbedded();
 wire();
-void connect();
+if (!isSite) void connect();

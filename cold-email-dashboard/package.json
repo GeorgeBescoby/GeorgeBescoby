@@ -14,7 +14,9 @@
     "verify": "tsx scripts/verify-kpis.ts",
     "webhook:create": "tsx scripts/create-webhook.ts",
     "artifact:sync": "tsx scripts/artifact-sync.ts",
-    "artifact:build": "tsx scripts/build-artifact.ts"
+    "artifact:build": "tsx scripts/build-artifact.ts",
+    "site:sync": "tsx scripts/site-sync.ts",
+    "site:build": "tsx scripts/build-site.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",

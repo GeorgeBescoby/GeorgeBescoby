@@ -10,12 +10,13 @@ Shows whether cold email is worth the money: spend, prospects contacted, replies
 
 Every view has the period toggle: This week · This month · Last month · All time.
 
-## Two ways to run it
+## Ways to run it
 
-- **Free:** a private claude.ai page, kept up to date by a daily Claude routine. No hosting and no server. See **[docs/ARTIFACT.md](docs/ARTIFACT.md)**. Page: https://claude.ai/artifact/UiZNyWt4DpPfyFHfZm4Avn
-- **Hosted:** the Next.js app below (Railway/Vercel), with a password, a Smartlead webhook for exact timestamps, and a "Refresh now" button.
+- **Free website (recommended):** GitHub Actions syncs Smartlead daily and publishes to Cloudflare Pages behind an email login. See **[docs/SITE.md](docs/SITE.md)**.
+- **Free, claude.ai only:** a private claude.ai page updated by a daily Claude routine. See [docs/ARTIFACT.md](docs/ARTIFACT.md). Page: https://claude.ai/artifact/UiZNyWt4DpPfyFHfZm4Avn
+- **Paid hosting:** the Next.js app below (Railway/Vercel), with a password, a Smartlead webhook for exact timestamps, and a "Refresh now" button.
 
-Both use the same KPI code (`lib/metrics`).
+All three use the same KPI code (`lib/metrics`).
 
 ## Quick start (local, sample data)
 
@@ -156,5 +157,6 @@ Add a page under `app/(dashboard)/` and a link in `components/Nav.tsx`.
 | `npm run sync` | Run the Smartlead sync once |
 | `npm run webhook:create -- <url>` | Register the Smartlead webhook |
 | `npm run seed:mock` | Print the sample dataset's KPIs |
+| `npm run site:sync -- <state>` / `site:build -- <state> <out>` | Daily sync / static build for the Cloudflare site (run by the workflow) |
 | `npm run artifact:build` | Build the claude.ai page into `artifact/dist/` |
 | `npm run artifact:sync -- <in> <out>` | Daily sync for the claude.ai page (run by the routine) |

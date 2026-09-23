@@ -15,31 +15,19 @@
 import fs from "node:fs";
 import path from "node:path";
 import { DEFAULT_SETTINGS, type Settings } from "../config/defaults";
-import { unwrapDoc, type Doc } from "../lib/artifact-state";
+import type { Doc } from "../lib/artifact-state";
 import { exportDocs, importDocs } from "../lib/artifact-state-db";
 import { createMemoryDb } from "../lib/db";
 import { londonDay } from "../lib/dates";
 import { seedMockDb } from "../lib/mock/generate";
 import { saveSettings } from "../lib/settings";
 import { runSync } from "../lib/smartlead/sync";
+import { readDocs } from "../lib/state-files";
 
 try {
   process.loadEnvFile?.(".env");
 } catch {
   /* no .env */
-}
-
-function readDocs(dir: string): Doc[] {
-  const docs: Doc[] = [];
-  if (!fs.existsSync(dir)) return docs;
-  for (const collection of fs.readdirSync(dir)) {
-    const cdir = path.join(dir, collection);
-    if (!fs.statSync(cdir).isDirectory()) continue;
-    for (const f of fs.readdirSync(cdir).filter((f) => f.endsWith(".json"))) {
-      docs.push({ collection, doc_id: f.replace(/\.json$/, ""), data: unwrapDoc(JSON.parse(fs.readFileSync(path.join(cdir, f), "utf8"))) });
-    }
-  }
-  return docs;
 }
 
 async function main() {

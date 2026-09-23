@@ -13,3 +13,5 @@ next-env.d.ts
 data/
 explore-output/
 artifact/dist/
+site/
+state/
