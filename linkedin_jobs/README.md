@@ -10,7 +10,28 @@ credentials are used.
 pip install -r requirements.txt
 ```
 
-## Usage
+## Search tool (web app)
+
+```bash
+python -m linkedin_jobs serve
+```
+
+This opens a search page at http://localhost:8000. Type a job role (and
+optionally a location), pick filters, and hit **Search**. Results fill a
+table as they load. Click a column header to sort, use the filter box to
+narrow results, click any row for the full description and links, and
+**Export CSV** to download the table. Every search is also saved to the
+database.
+
+## Search from the terminal
+
+```bash
+python -m linkedin_jobs search "marketing manager" -l London -n 25
+```
+
+Prints the results as a table.
+
+## Bulk scraping
 
 ```bash
 # One search, with full descriptions

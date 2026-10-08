@@ -5,7 +5,7 @@ import csv
 import json
 import sys
 
-from . import db, scraper
+from . import db, scraper, web
 
 
 def _csv_list(choices):
@@ -89,6 +89,38 @@ def cmd_export(args, conn, _client):
         print(f"Exported {len(rows)} jobs to {args.output}")
 
 
+def cmd_search(args, conn, client):
+    """Live search, printed as a table in the terminal."""
+    params = scraper.SearchParams(
+        keywords=args.keywords, location=args.location, time_posted=args.time_posted,
+        job_types=args.job_type or [], workplace=args.workplace or [],
+        experience=args.experience or [],
+    )
+    rows = []
+    for card in scraper.search(client, params, args.max_jobs):
+        db.upsert_card(conn, card, params.label())
+        rows.append(card)
+        print(f"\rFetched {len(rows)} jobs...", end="", file=sys.stderr, flush=True)
+    conn.commit()
+    print("\r" + " " * 30 + "\r", end="", file=sys.stderr)
+    if not rows:
+        print("No jobs found.")
+        return
+    cols = [("#", None, 3), ("Job title", "title", 45), ("Company", "company", 25),
+            ("Location", "location", 28), ("Posted", "posted_date", 10), ("Salary", "salary", 22)]
+    cut = lambda v, w: (v or "")[: w - 1] + "…" if len(v or "") > w else (v or "")
+    line = lambda vals: "  ".join(cut(v, w).ljust(w) for v, (_, _, w) in zip(vals, cols)).rstrip()
+    print(line([c[0] for c in cols]))
+    print("  ".join("-" * w for _, _, w in cols))
+    for i, r in enumerate(rows, 1):
+        print(line([str(i)] + [r.get(k) for _, k, _ in cols[1:]]))
+    print(f"\n{len(rows)} jobs. Links: python -m linkedin_jobs export, or use the web UI (serve).")
+
+
+def cmd_serve(args, _conn, client):
+    web.serve(args.db, client, args.host, args.port, not args.no_browser)
+
+
 def cmd_stats(_args, conn, _client):
     q = lambda sql: conn.execute(sql).fetchall()
     total = q("SELECT COUNT(*) c FROM jobs")[0]["c"]
@@ -104,7 +136,7 @@ def cmd_stats(_args, conn, _client):
 def main(argv=None):
     p = argparse.ArgumentParser(prog="linkedin_jobs", description="Build a job database from LinkedIn's public job listings.")
     p.add_argument("--db", default="jobs.db", help="SQLite database path (default: jobs.db)")
-    p.add_argument("--min-delay", type=float, default=2.0, help="min seconds between requests")
+    p.add_argument("--min-delay", type=float, default=1.5, help="min seconds between requests")
     p.add_argument("--max-delay", type=float, default=5.0, help="max seconds between requests")
     sub = p.add_subparsers(dest="command", required=True)
 
@@ -119,6 +151,22 @@ def main(argv=None):
     s.add_argument("--details", action="store_true", help="also fetch full description for each new job")
     s.add_argument("--config", help="JSON file with a list of searches (overrides other search flags)")
     s.set_defaults(func=cmd_scrape)
+
+    se = sub.add_parser("search", help="live search, results printed as a table")
+    se.add_argument("keywords")
+    se.add_argument("-l", "--location", default="")
+    se.add_argument("-n", "--max-jobs", type=int, default=25)
+    se.add_argument("--time-posted", choices=list(scraper.TIME_POSTED))
+    se.add_argument("--job-type", type=_csv_list(scraper.JOB_TYPES))
+    se.add_argument("--workplace", type=_csv_list(scraper.WORKPLACE))
+    se.add_argument("--experience", type=_csv_list(scraper.EXPERIENCE))
+    se.set_defaults(func=cmd_search)
+
+    sv = sub.add_parser("serve", help="open the search web app in your browser")
+    sv.add_argument("--host", default="127.0.0.1")
+    sv.add_argument("--port", type=int, default=8000)
+    sv.add_argument("--no-browser", action="store_true", help="don't open a browser tab automatically")
+    sv.set_defaults(func=cmd_serve)
 
     d = sub.add_parser("details", help="fetch full details for jobs that don't have them yet")
     d.add_argument("--limit", type=int)

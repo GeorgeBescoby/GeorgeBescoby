@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Search</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --panel: #ffffff; --text: #16191d; --muted: #5d6673;
+    --border: #e1e4e8; --accent: #0a66c2; --accent-text: #ffffff;
+    --row-hover: #f0f4fa; --chip: #eef1f5; --chip-on: #0a66c2; --danger: #b42318;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1114; --panel: #181b20; --text: #e7e9ec; --muted: #9aa3ae;
+      --border: #2a2f36; --accent: #4d9fe8; --accent-text: #0b0d10;
+      --row-hover: #1f242b; --chip: #232830; --chip-on: #4d9fe8; --danger: #f97066;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 16px; letter-spacing: -0.01em; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  form .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  input[type=text], select {
+    font: inherit; color: inherit; background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 9px 12px; min-width: 0;
+  }
+  input[type=text]:focus, select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  #keywords { flex: 2 1 260px; } #location { flex: 1 1 180px; }
+  button {
+    font: inherit; font-weight: 600; border: 0; border-radius: 8px; padding: 9px 18px; cursor: pointer;
+    background: var(--accent); color: var(--accent-text);
+  }
+  button { white-space: nowrap; }
+  button.secondary { background: var(--chip); color: var(--text); font-weight: 500; }
+  button:disabled { opacity: .55; cursor: default; }
+  .filters { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 14px; align-items: center; }
+  .group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .group > span { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; margin-right: 2px; }
+  .chip { position: relative; }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip label { display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--chip);
+                cursor: pointer; font-size: 13px; user-select: none; }
+  .chip input:checked + label { background: var(--chip-on); color: var(--accent-text); }
+  .chip input:focus-visible + label { outline: 2px solid var(--accent); }
+  .toolbar { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin: 18px 0 10px; }
+  #status { color: var(--muted); }
+  #status.error { color: var(--danger); }
+  #filter { flex: 0 1 260px; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--panel); }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted);
+       cursor: pointer; white-space: nowrap; user-select: none; position: sticky; top: 0; background: var(--panel); }
+  th[aria-sort=ascending]::after { content: " ▲"; } th[aria-sort=descending]::after { content: " ▼"; }
+  tbody tr { cursor: pointer; } tbody tr:hover { background: var(--row-hover); }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.title { font-weight: 600; min-width: 220px; }
+  td.nowrap { white-space: nowrap; }
+  td a { color: var(--accent); text-decoration: none; } td a:hover { text-decoration: underline; }
+  .empty { padding: 48px 16px; text-align: center; color: var(--muted); }
+  .spinner { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--border);
+             border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite;
+             vertical-align: -1px; margin-right: 6px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Detail drawer */
+  #overlay { position: fixed; inset: 0; background: rgba(0,0,0,.35); display: none; }
+  #drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(640px, 100%); background: var(--panel);
+            border-left: 1px solid var(--border); transform: translateX(100%); transition: transform .2s ease;
+            display: flex; flex-direction: column; }
+  body.drawer-open #overlay { display: block; }
+  body.drawer-open #drawer { transform: none; }
+  #drawer header { padding: 18px 20px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: flex-start; }
+  #drawer header div { flex: 1; min-width: 0; }
+  #d-title { font-size: 18px; margin: 0 0 4px; }
+  #d-sub { color: var(--muted); }
+  #drawer .body { padding: 18px 20px; overflow-y: auto; flex: 1; }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin-bottom: 18px; }
+  .facts dt { color: var(--muted); } .facts dd { margin: 0; }
+  #d-desc { white-space: pre-wrap; }
+  .actions { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .actions a { display: inline-block; padding: 8px 14px; border-radius: 8px; background: var(--accent);
+               color: var(--accent-text); text-decoration: none; font-weight: 600; }
+  .actions a.secondary { background: var(--chip); color: var(--text); font-weight: 500; }
+
+  @media (max-width: 640px) {
+    .hide-sm { display: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Job Search</h1>
+
+  <form id="form" class="panel">
+    <div class="row">
+      <input id="keywords" type="text" placeholder="Job title or keywords, e.g. Marketing Manager" autocomplete="off" required>
+      <input id="location" type="text" placeholder="Location, e.g. London" autocomplete="off">
+      <select id="limit" aria-label="Number of results">
+        <option value="25">25 results</option>
+        <option value="50" selected>50 results</option>
+        <option value="100">100 results</option>
+        <option value="250">250 results</option>
+      </select>
+      <button id="go" type="submit">Search</button>
+    </div>
+    <div class="filters">
+      <div class="group"><span>Posted</span>
+        <select id="time_posted" aria-label="Date posted">
+          <option value="">Any time</option><option value="24h">Past 24 hours</option>
+          <option value="week">Past week</option><option value="month">Past month</option>
+        </select>
+      </div>
+      <div class="group" data-name="workplace"><span>Workplace</span></div>
+      <div class="group" data-name="job_types"><span>Type</span></div>
+      <div class="group" data-name="experience"><span>Level</span></div>
+    </div>
+  </form>
+
+  <div class="toolbar">
+    <div id="status">Enter a job role to search.</div>
+    <div class="row" style="display:flex;gap:8px">
+      <input id="filter" type="text" placeholder="Filter results…" aria-label="Filter results">
+      <button id="stop" class="secondary" type="button" hidden>Stop</button>
+      <button id="csv" class="secondary" type="button" disabled>Export CSV</button>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr>
+        <th data-key="title">Job title</th>
+        <th data-key="company">Company</th>
+        <th data-key="location">Location</th>
+        <th data-key="posted_date">Posted</th>
+        <th data-key="salary" class="hide-sm">Salary</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div id="empty" class="empty">No results yet.</div>
+  </div>
+</main>
+
+<div id="overlay"></div>
+<aside id="drawer" aria-hidden="true">
+  <header>
+    <div><h2 id="d-title"></h2><div id="d-sub"></div></div>
+    <button id="close" class="secondary" type="button" aria-label="Close">✕</button>
+  </header>
+  <div class="body">
+    <div class="actions" id="d-actions"></div>
+    <dl class="facts" id="d-facts"></dl>
+    <div id="d-desc"></div>
+  </div>
+</aside>
+
+<script>
+const OPTIONS = {
+  workplace: [["remote", "Remote"], ["hybrid", "Hybrid"], ["on-site", "On-site"]],
+  job_types: [["full-time", "Full-time"], ["part-time", "Part-time"], ["contract", "Contract"],
+              ["temporary", "Temporary"], ["internship", "Internship"]],
+  experience: [["internship", "Internship"], ["entry", "Entry"], ["associate", "Associate"],
+               ["mid-senior", "Mid-Senior"], ["director", "Director"], ["executive", "Executive"]],
+};
+const $ = id => document.getElementById(id);
+
+for (const group of document.querySelectorAll(".group[data-name]")) {
+  const name = group.dataset.name;
+  for (const [value, label] of OPTIONS[name]) {
+    const id = `${name}-${value}`;
+    const wrap = document.createElement("span");
+    wrap.className = "chip";
+    wrap.innerHTML = `<input type="checkbox" id="${id}" value="${value}"><label for="${id}">${label}</label>`;
+    group.appendChild(wrap);
+  }
+}
+
+let jobs = [], sortKey = null, sortDir = 1, runId = 0;
+
+function setStatus(text, { loading = false, error = false } = {}) {
+  const el = $("status");
+  el.className = error ? "error" : "";
+  el.innerHTML = loading ? '<span class="spinner"></span>' : "";
+  el.append(text);
+}
+
+function formatDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso + "T00:00:00");
+  const days = Math.round((new Date().setHours(0,0,0,0) - d) / 86400000);
+  if (days <= 0) return "Today";
+  if (days === 1) return "Yesterday";
+  if (days < 7) return `${days} days ago`;
+  return d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
+}
+
+function render() {
+  const q = $("filter").value.trim().toLowerCase();
+  let list = q ? jobs.filter(j => [j.title, j.company, j.location, j.salary].join(" ").toLowerCase().includes(q)) : jobs.slice();
+  if (sortKey) list.sort((a, b) => (a[sortKey] || "").localeCompare(b[sortKey] || "") * sortDir);
+  const tbody = $("rows");
+  tbody.replaceChildren();
+  for (const j of list) {
+    const tr = document.createElement("tr");
+    tr.tabIndex = 0;
+    const cells = [
+      [j.title, "title"], [j.company, ""], [j.location, ""],
+      [formatDate(j.posted_date), "nowrap"], [j.salary || "", "nowrap hide-sm"],
+    ];
+    for (const [text, cls] of cells) {
+      const td = document.createElement("td");
+      td.className = cls;
+      td.textContent = text || "";
+      tr.appendChild(td);
+    }
+    tr.onclick = () => openJob(j);
+    tr.onkeydown = e => { if (e.key === "Enter") openJob(j); };
+    tbody.appendChild(tr);
+  }
+  $("empty").hidden = list.length > 0;
+  $("empty").textContent = jobs.length ? "No results match your filter." : "No results yet.";
+  $("csv").disabled = jobs.length === 0;
+}
+
+document.querySelectorAll("th[data-key]").forEach(th => th.onclick = () => {
+  const key = th.dataset.key;
+  sortDir = sortKey === key ? -sortDir : 1;
+  sortKey = key;
+  document.querySelectorAll("th").forEach(h => h.removeAttribute("aria-sort"));
+  th.setAttribute("aria-sort", sortDir === 1 ? "ascending" : "descending");
+  render();
+});
+$("filter").oninput = render;
+
+$("form").onsubmit = async e => {
+  e.preventDefault();
+  const myRun = ++runId;
+  const params = new URLSearchParams({
+    keywords: $("keywords").value.trim(),
+    location: $("location").value.trim(),
+    time_posted: $("time_posted").value,
+  });
+  for (const name of Object.keys(OPTIONS)) {
+    const vals = [...document.querySelectorAll(`.group[data-name=${name}] input:checked`)].map(i => i.value);
+    if (vals.length) params.set(name, vals.join(","));
+  }
+  const limit = +$("limit").value;
+  jobs = []; sortKey = null; $("filter").value = "";
+  document.querySelectorAll("th").forEach(h => h.removeAttribute("aria-sort"));
+  render();
+  $("go").disabled = true; $("stop").hidden = false;
+  const seen = new Set();
+  try {
+    for (let start = 0; start < limit; start += 10) {
+      setStatus(`Searching… ${jobs.length} found so far`, { loading: true });
+      params.set("start", start);
+      const res = await fetch(`/api/search?${params}`);
+      const data = await res.json();
+      if (myRun !== runId) return;
+      if (data.error) throw new Error(data.error);
+      for (const j of data.jobs) if (!seen.has(j.job_id) && jobs.length < limit) { seen.add(j.job_id); jobs.push(j); }
+      render();
+      if (data.done) break;
+    }
+    setStatus(`${jobs.length} jobs found${jobs.length ? ". Click a row to see full details." : "."}`);
+  } catch (err) {
+    if (myRun === runId) setStatus(`Search failed: ${err.message}`, { error: true });
+  } finally {
+    if (myRun === runId) { $("go").disabled = false; $("stop").hidden = true; }
+  }
+};
+
+$("stop").onclick = () => {
+  runId++;
+  $("go").disabled = false; $("stop").hidden = true;
+  setStatus(`Stopped. ${jobs.length} jobs found.`);
+};
+
+function addFact(dl, label, value) {
+  if (!value) return;
+  const dt = document.createElement("dt"); dt.textContent = label;
+  const dd = document.createElement("dd"); dd.textContent = value;
+  dl.append(dt, dd);
+}
+
+function addLink(container, href, text, secondary) {
+  if (!href) return;
+  const a = document.createElement("a");
+  a.href = href; a.target = "_blank"; a.rel = "noopener"; a.textContent = text;
+  if (secondary) a.className = "secondary";
+  container.appendChild(a);
+}
+
+async function openJob(j) {
+  $("d-title").textContent = j.title || "";
+  $("d-sub").textContent = [j.company, j.location].filter(Boolean).join(" · ");
+  const actions = $("d-actions"); actions.replaceChildren();
+  addLink(actions, j.url, "View on LinkedIn");
+  addLink(actions, j.company_url, "Company page", true);
+  const facts = $("d-facts"); facts.replaceChildren();
+  addFact(facts, "Posted", formatDate(j.posted_date));
+  addFact(facts, "Salary", j.salary);
+  $("d-desc").innerHTML = '<span class="spinner"></span>Loading description…';
+  document.body.classList.add("drawer-open");
+  $("drawer").setAttribute("aria-hidden", "false");
+
+  try {
+    const d = await (await fetch(`/api/job/${j.job_id}`)).json();
+    if (d.error) throw new Error(d.error);
+    if (d.apply_url) addLink(actions, d.apply_url, "Apply on company site", true);
+    if (d.salary && !j.salary) addFact(facts, "Salary", d.salary);
+    addFact(facts, "Seniority", d.seniority);
+    addFact(facts, "Type", d.employment_type);
+    addFact(facts, "Function", d.job_function);
+    addFact(facts, "Industry", d.industries);
+    addFact(facts, "Applicants", d.applicants);
+    $("d-desc").textContent = d.description || "No description available.";
+  } catch (err) {
+    $("d-desc").textContent = err.message;
+  }
+}
+
+function closeDrawer() {
+  document.body.classList.remove("drawer-open");
+  $("drawer").setAttribute("aria-hidden", "true");
+}
+$("close").onclick = closeDrawer;
+$("overlay").onclick = closeDrawer;
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+
+$("csv").onclick = () => {
+  const cols = ["title", "company", "location", "posted_date", "salary", "url", "company_url"];
+  const esc = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const csv = [cols.join(","), ...jobs.map(j => cols.map(c => esc(j[c])).join(","))].join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+  a.download = `jobs-${($("keywords").value || "search").replace(/\W+/g, "-").toLowerCase()}.csv`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+};
+
+$("keywords").focus();
+</script>
+</body>
+</html>
