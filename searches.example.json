@@ -1,0 +1,5 @@
+[
+  {"keywords": "marketing manager", "location": "United Kingdom", "time_posted": "week", "max_jobs": 200},
+  {"keywords": "performance marketing", "location": "London", "workplace": ["remote", "hybrid"], "max_jobs": 100},
+  {"keywords": "data analyst", "location": "Manchester", "job_types": ["full-time"], "experience": ["entry", "associate"]}
+]
