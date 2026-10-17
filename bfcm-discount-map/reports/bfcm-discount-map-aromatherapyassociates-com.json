@@ -1,0 +1,736 @@
+{
+  "domain": "aromatherapyassociates.com",
+  "brand": "Aromatherapy Associates",
+  "date": "2026-10-17",
+  "n_products_feed": 123,
+  "n_products_kept": 114,
+  "bf_sources": [
+    {
+      "url": "https://aromatherapyassociates.com/collections/black-friday",
+      "kind": "collection",
+      "years": [
+        2025
+      ],
+      "pcts": [
+        {
+          "pct": 50,
+          "up_to": false,
+          "sitewide": false,
+          "context": "Black Friday Sale 2025 | Aromatherapy Associates Skip to content Discover 50% savings on The Seasonal Edit FREE Standard delivery when you spend over \u00a375 Shop Bath &"
+        },
+        {
+          "pct": 40,
+          "up_to": true,
+          "sitewide": false,
+          "context": "ragrance Room Fragrance Mists Pure Essential Oil Blends Shop all Home Fragrance Up to 40% Off Our Award Winning Waterless Diffusers Shop Diffusers Find a Gift Gift Finder Gi"
+        },
+        {
+          "pct": 49,
+          "up_to": true,
+          "sitewide": false,
+          "context": "Search for a product, wellness concern or ingredient DISCOVER BESTSELLERS SAVE UP TO 49% ON GIFT SETS SAVE UP TO 40% OFF DIFFUSERS AWARD WINNING GIFTS Home Collections B"
+        },
+        {
+          "pct": 40,
+          "up_to": true,
+          "sitewide": false,
+          "context": "ess concern or ingredient DISCOVER BESTSELLERS SAVE UP TO 49% ON GIFT SETS SAVE UP TO 40% OFF DIFFUSERS AWARD WINNING GIFTS Home Collections Black Friday Black Friday Don't"
+        },
+        {
+          "pct": 25,
+          "up_to": false,
+          "sitewide": true,
+          "context": "USERS AWARD WINNING GIFTS Home Collections Black Friday Black Friday Don't miss 25% off sitewide*, with code BF25 at checkout. Kick off your holiday shopping and treat"
+        }
+      ],
+      "codes": [
+        "BF25"
+      ],
+      "label": "last year",
+      "handles": [
+        "ultimate-bath-shower-oil-collection",
+        "discovery-bath-shower-oil-collection",
+        "atomiser-connect",
+        "essential-oil-blends-collection",
+        "essential-bath-shower-oil-trio",
+        "perfect-partners-bath-shower-oil-duo",
+        "travel-shower-oil-discovery-collection",
+        "deep-relax-bath-shower-oil-55ml",
+        "sleep-mist-deep-relax-50ml",
+        "support-breathe-shower-mist-100ml",
+        "revive-shower-oil-250ml",
+        "forest-therapy-pure-essential-oil-blend",
+        "breathe-pure-essential-oil-blend",
+        "de-stress-mind-shower-oil-250ml",
+        "desert-therapy-pure-essential-oil-blend-10ml-copy",
+        "de-stress-muscle-bath-shower-oil-55ml",
+        "de-stress-muscle-shower-oil",
+        "de-stress-muscle-gel-150ml",
+        "de-stress-pure-essential-oil-blend",
+        "winter-wellbeing-pure-essential-oil-blend",
+        "de-stress-mind-bath-shower-oil-55ml",
+        "forest-therapy-bath-shower-oil-55ml",
+        "calm-confidence-bath-shower-oil-55ml",
+        "rose-pure-essential-oil-blend",
+        "revive-morning-body-wash-250ml",
+        "revive-morning-bath-shower-oil-55ml",
+        "deep-relax-bath-shower-oil-100ml",
+        "inner-strength-bath-shower-oil-55ml",
+        "desert-therapy-bath-shower-oil-55ml",
+        "relax-body-oil",
+        "revive-body-brush",
+        "rose-shower-oil-250ml",
+        "rose-bath-shower-oil-55ml",
+        "revive-body-oil",
+        "de-stress-body-oil",
+        "desert-therapy-pure-essential-oil-blend",
+        "inner-strength-body-oil",
+        "calm-confidence-pure-essential-oil-blend",
+        "rose-indulgent-body-cream-200ml",
+        "desert-therapy-body-oil-100ml",
+        "pro-calm-face-oil-15ml",
+        "support-breathe-bath-shower-oil-55ml",
+        "destress-warming-muscle-gel",
+        "support-equilibrium-bath-shower-oil-55ml",
+        "de-stress-mind-body-lotion-250ml",
+        "festive-26-a-gift-of-wellbeing",
+        "revive-pure-essential-oil-blend",
+        "festive-26-a-gift-of-recovery",
+        "a-gift-of-sleep",
+        "oil-to-foam-cleanser-140ml",
+        "de-stress-mind-mood-mist-100ml",
+        "revive-evening-bath-shower-oil-55ml",
+        "deep-relax-nourishing-body-treatment-200ml",
+        "revive-morning-mood-mist-100ml",
+        "festive-26-a-gift-of-relaxation",
+        "rose-pink-clay-mask-200ml",
+        "canvas-wash-bag",
+        "velvet-washbag",
+        "travel-washbag",
+        "light-relax-bath-shower-oil-9ml",
+        "travel-revive-morning-body-wash-50ml",
+        "rose-shower-oil-50ml",
+        "revive-shower-oil-50ml",
+        "de-stress-mind-shower-oil-50ml",
+        "de-stress-muscle-shower-oil-50ml",
+        "travel-destress-warming-muscle-gel",
+        "support-breathe-bath-shower-oil-9ml",
+        "de-stress-muscle-gel-40ml",
+        "rose-pink-clay-mask-50ml",
+        "deep-relax-body-butter-50ml",
+        "atomiser-connect-diffusion-head",
+        "diffuser-head",
+        "relax-restore-selfcare-gift-set",
+        "festive-26-a-gift-of-energy",
+        "de-stress-mind-body-wash-250ml",
+        "light-relax-bath-shower-oil-55ml",
+        "home-fragrancer-u-s",
+        "day-to-night-home-fragrance-kit",
+        "home-diffuser",
+        "rose-candle-200g",
+        "revive-candle-200g",
+        "revive-morning-body-lotion-250ml",
+        "revive-morning-roller-ball",
+        "deep-relax-roller-ball",
+        "liberty-clear-mind-roller-ball",
+        "de-stress-roller-ball",
+        "travel-de-stress-muscle-bath-shower-oil",
+        "rose-body-butter-50ml",
+        "travel-revive-morning-mood-mist-10ml",
+        "travel-de-stress-mind-mood-mist-10ml"
+      ],
+      "live_markdowns": [
+        {
+          "handle": "deep-relax-bath-shower-oil-55ml",
+          "title": "Deep Relax Bath & Shower Oil",
+          "was": 65.0,
+          "now": 48.75,
+          "pct": 25
+        },
+        {
+          "handle": "revive-shower-oil-250ml",
+          "title": "Revive Shower Oil",
+          "was": 38.0,
+          "now": 26.6,
+          "pct": 30
+        },
+        {
+          "handle": "breathe-pure-essential-oil-blend",
+          "title": "Support Breathe Pure Essential Oil Blend",
+          "was": 32.0,
+          "now": 24.0,
+          "pct": 25
+        },
+        {
+          "handle": "de-stress-muscle-shower-oil",
+          "title": "De-Stress Muscle Shower Oil",
+          "was": 38.0,
+          "now": 26.6,
+          "pct": 30
+        },
+        {
+          "handle": "de-stress-pure-essential-oil-blend",
+          "title": "De-Stress Pure Essential Oil Blend",
+          "was": 32.0,
+          "now": 24.0,
+          "pct": 25
+        },
+        {
+          "handle": "de-stress-mind-bath-shower-oil-55ml",
+          "title": "De-Stress Mind Bath & Shower Oil",
+          "was": 65.0,
+          "now": 48.75,
+          "pct": 25
+        },
+        {
+          "handle": "forest-therapy-bath-shower-oil-55ml",
+          "title": "Forest Therapy Bath & Shower Oil",
+          "was": 65.0,
+          "now": 48.75,
+          "pct": 25
+        },
+        {
+          "handle": "inner-strength-bath-shower-oil-55ml",
+          "title": "Inner Strength Bath & Shower Oil",
+          "was": 65.0,
+          "now": 48.75,
+          "pct": 25
+        },
+        {
+          "handle": "inner-strength-body-oil",
+          "title": "Inner Strength Body Oil",
+          "was": 62.0,
+          "now": 46.5,
+          "pct": 25
+        },
+        {
+          "handle": "rose-indulgent-body-cream-200ml",
+          "title": "Rose Indulgent Body Cream",
+          "was": 58.0,
+          "now": 40.6,
+          "pct": 30
+        },
+        {
+          "handle": "pro-calm-face-oil-15ml",
+          "title": "Pro Calm Face Oil",
+          "was": 67.0,
+          "now": 40.2,
+          "pct": 40
+        },
+        {
+          "handle": "support-equilibrium-bath-shower-oil-55ml",
+          "title": "Support Equilibrium Bath & Shower Oil",
+          "was": 65.0,
+          "now": 48.75,
+          "pct": 25
+        },
+        {
+          "handle": "velvet-washbag",
+          "title": "Velvet Wash Bag",
+          "was": 22.0,
+          "now": 11.0,
+          "pct": 50
+        },
+        {
+          "handle": "travel-destress-warming-muscle-gel",
+          "title": "Travel Warming De-Stress Muscle Gel, 40ml",
+          "was": 14.0,
+          "now": 10.5,
+          "pct": 25
+        }
+      ]
+    }
+  ],
+  "homepage": {
+    "url": "https://aromatherapyassociates.com/",
+    "pcts": [
+      {
+        "pct": 50,
+        "up_to": false,
+        "sitewide": false,
+        "context": "matherapy Associates | World's Best Aromatherapy Brand Skip to content Discover 50% savings on The Seasonal Edit FREE Standard delivery when you spend over \u00a375 Shop Bath &"
+      },
+      {
+        "pct": 40,
+        "up_to": true,
+        "sitewide": false,
+        "context": "ragrance Room Fragrance Mists Pure Essential Oil Blends Shop all Home Fragrance Up to 40% Off Our Award Winning Waterless Diffusers Shop Diffusers Find a Gift Gift Finder Gi"
+      },
+      {
+        "pct": 49,
+        "up_to": true,
+        "sitewide": false,
+        "context": "Search for a product, wellness concern or ingredient DISCOVER BESTSELLERS SAVE UP TO 49% ON GIFT SETS SAVE UP TO 40% OFF DIFFUSERS AWARD WINNING GIFTS COMPLIMENTARY GIFT"
+      },
+      {
+        "pct": 40,
+        "up_to": true,
+        "sitewide": false,
+        "context": "ess concern or ingredient DISCOVER BESTSELLERS SAVE UP TO 49% ON GIFT SETS SAVE UP TO 40% OFF DIFFUSERS AWARD WINNING GIFTS COMPLIMENTARY GIFT PRESS PAUSE ON A BUSY DAY Enjo"
+      },
+      {
+        "pct": 40,
+        "up_to": false,
+        "sitewide": false,
+        "context": "joy your Rose Gift worth \u00a338 when you spend \u00a375 SHOP NOW OUR WATERLESS DIFFUSER 40% SAVINGS \u201cAbsolutely love this product, it\u2019s my second one\u201d - Sandra SHOP HOME FLOURISH"
+      }
+    ],
+    "codes": []
+  },
+  "last_year_offer": {
+    "name": "25% off sitewide with code BF25",
+    "pct": 25,
+    "url": "https://aromatherapyassociates.com/collections/black-friday",
+    "evidence": "The Black Friday collection page is titled \"Black Friday Sale 2025\" and says \"Don't miss 25% off sitewide*, with code BF25 at checkout ... offer ends 7th of December 2025. *Exclusions apply.\"",
+    "exclusions": true
+  },
+  "live_offer": {
+    "name": "40% off The Atomiser (\u00a378, was \u00a3130)",
+    "short": "40% off The Atomiser",
+    "pct": 40,
+    "product": "the-atomiser",
+    "url": "https://aromatherapyassociates.com/products/the-atomiser",
+    "free_gift": "Rose Gift worth \u00a338 that comes with orders over \u00a375",
+    "evidence": "Homepage banner \"Our waterless diffuser 40% savings\" and menu \"Up to 40% off our award winning waterless diffusers\". The product feed shows \u00a378 against a compare-at price of \u00a3130. It also sits in the Last Chance collection that the site banner calls The Seasonal Edit. The homepage offers a Rose Gift worth \u00a338 when you spend \u00a375."
+  },
+  "offer_cost": {
+    "product": "The Atomiser",
+    "handle": "the-atomiser",
+    "pct": 40,
+    "P": 130.0,
+    "S": 78.0,
+    "roas": {
+      "40": null,
+      "50": 15.291119388355206,
+      "60": 4.89519266976277,
+      "70": 2.91403593977659
+    },
+    "contribution50": 5.101000000000006
+  },
+  "rows": [
+    {
+      "handle": "the-atomiser",
+      "title": "The Atomiser",
+      "type": "Diffuser",
+      "tags": [
+        "atomiser",
+        "badge_bg: #071D49",
+        "badge_colour: #f9f6f4",
+        "diffuser",
+        "SEASONALEDIT",
+        "SEASONALEDIT40"
+      ],
+      "published_at": "2022-10-03T19:13:31+01:00",
+      "variant_id": 43712994083058,
+      "grams": 1459,
+      "available": true,
+      "price_now": 78.0,
+      "P": 130.0,
+      "live_markdown": 0.4,
+      "url": "https://aromatherapyassociates.com/products/the-atomiser",
+      "V": 21.67,
+      "vat_method": "Checkout (\u00a313.00 at today's \u00a378.00, scaled to full price)",
+      "vat_checkout": 13.0,
+      "postage_class": "standard",
+      "postage": 4.0,
+      "in_bf_collection": false,
+      "bp": {
+        "40": 0.34585301341394303,
+        "50": 0.4481862837710183,
+        "60": 0.5505195541280937,
+        "70": 0.652852824485169
+      },
+      "ladder": {
+        "0": 2.740014753925598,
+        "10": 3.174258661385279,
+        "20": 3.9584364176150415,
+        "25": 4.647283126787416,
+        "30": 5.80098170459616
+      }
+    },
+    {
+      "handle": "festive-26-a-gift-of-relaxation",
+      "title": "A Gift of Relaxation",
+      "type": "",
+      "tags": [
+        "Festive 2026 NPD"
+      ],
+      "published_at": "2026-08-28T15:12:13+01:00",
+      "variant_id": 58559370494333,
+      "grams": 0,
+      "available": true,
+      "price_now": 15.0,
+      "P": 15.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/festive-26-a-gift-of-relaxation",
+      "V": 2.5,
+      "vat_method": "Checkout",
+      "vat_checkout": 2.5,
+      "postage_class": "small",
+      "postage": 3.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.07900122799836262,
+        "50": 0.18133442488743345,
+        "60": 0.2836676217765043,
+        "70": 0.3860008186655751
+      },
+      "ladder": {
+        "0": 6.772009029345373,
+        "10": 13.588324106693507,
+        "20": null,
+        "25": null,
+        "30": null
+      }
+    },
+    {
+      "handle": "desert-therapy-pure-essential-oil-blend-10ml-copy",
+      "title": "Deep Relax Pure Essential Oil Blend 10ml",
+      "type": "Diffuser Oil",
+      "tags": [],
+      "published_at": "2026-08-19T10:33:42+01:00",
+      "variant_id": 58551479468413,
+      "grams": 0,
+      "available": true,
+      "price_now": 32.0,
+      "P": 32.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/desert-therapy-pure-essential-oil-blend-10ml-copy",
+      "V": 5.33,
+      "vat_method": "Checkout",
+      "vat_checkout": 5.33,
+      "postage_class": "letterbox",
+      "postage": 2.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.28048499731409726,
+        "50": 0.38281789578696956,
+        "60": 0.48515079425984187,
+        "70": 0.5874836927327143
+      },
+      "ladder": {
+        "0": 3.2073769670241554,
+        "10": 3.9073099256525756,
+        "20": 5.372958905259622,
+        "25": 6.933410371226345,
+        "30": 10.378057820607877
+      }
+    },
+    {
+      "handle": "de-stress-body-oil",
+      "title": "De-Stress Body Oil",
+      "type": "Body Oil",
+      "tags": [
+        "badge_bg: #071D49",
+        "badge_colour: #f9f6f4",
+        "body oil",
+        "de-stress muscle",
+        "Physical Wellness",
+        "subscription"
+      ],
+      "published_at": "2026-08-10T11:14:08+01:00",
+      "variant_id": 43712983007474,
+      "grams": 301,
+      "available": true,
+      "price_now": 62.0,
+      "P": 62.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/de-stress-body-oil",
+      "V": 10.33,
+      "vat_method": "Checkout",
+      "vat_checkout": 10.33,
+      "postage_class": "small",
+      "postage": 3.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.31173255169135716,
+        "50": 0.41406559454963165,
+        "60": 0.5163986374079061,
+        "70": 0.6187316802661806
+      },
+      "ladder": {
+        "0": 2.965513942698618,
+        "10": 3.5187730958897205,
+        "20": 4.588938437910554,
+        "25": 5.613230323515212,
+        "30": 7.535507170885861
+      }
+    },
+    {
+      "handle": "de-stress-mind-mood-mist-100ml",
+      "title": "De-Stress Mind Mood Mist 100ml",
+      "type": "Mood Mist",
+      "tags": [
+        "de-stress mind",
+        "Emotional Wellness",
+        "full size",
+        "subscription"
+      ],
+      "published_at": "2026-08-06T15:59:14+01:00",
+      "variant_id": 57300861813117,
+      "grams": 0,
+      "available": true,
+      "price_now": 38.0,
+      "P": 38.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/de-stress-mind-mood-mist-100ml",
+      "V": 6.33,
+      "vat_method": "Checkout",
+      "vat_checkout": 6.33,
+      "postage_class": "small",
+      "postage": 3.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.26483132997285774,
+        "50": 0.3671642755590022,
+        "60": 0.4694972211451467,
+        "70": 0.5718301667312912
+      },
+      "ladder": {
+        "0": 3.344187274487371,
+        "10": 4.136329551776686,
+        "20": 5.876212935400316,
+        "25": 7.8599007170435815,
+        "30": 12.797074954296184
+      }
+    },
+    {
+      "handle": "desert-therapy-bath-shower-oil-55ml",
+      "title": "Desert Therapy Bath & Shower Oil 55ml",
+      "type": "Bath & Shower Oil",
+      "tags": [],
+      "published_at": "2026-06-01T07:46:47+01:00",
+      "variant_id": 58241530986877,
+      "grams": 0,
+      "available": true,
+      "price_now": 65.0,
+      "P": 65.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/desert-therapy-bath-shower-oil-55ml",
+      "V": 10.83,
+      "vat_method": "Checkout",
+      "vat_checkout": 10.83,
+      "postage_class": "small",
+      "postage": 3.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.31516010201190137,
+        "50": 0.41749315197884196,
+        "60": 0.5198262019457826,
+        "70": 0.6221592519127231
+      },
+      "ladder": {
+        "0": 2.941176470588235,
+        "10": 3.480796120548597,
+        "20": 4.516633370971945,
+        "25": 5.4983786832087995,
+        "30": 7.315700619020825
+      }
+    },
+    {
+      "handle": "destress-warming-muscle-gel",
+      "title": "Warming De-Stress Muscle Gel 150ml",
+      "type": "Muscle Gel",
+      "tags": [],
+      "published_at": "2026-02-16T08:15:10+00:00",
+      "variant_id": 56895437275517,
+      "grams": 0,
+      "available": true,
+      "price_now": 46.0,
+      "P": 46.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/destress-warming-muscle-gel",
+      "V": 7.67,
+      "vat_method": "Checkout",
+      "vat_checkout": 7.67,
+      "postage_class": "small",
+      "postage": 3.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.28588210166595474,
+        "50": 0.3882155061939342,
+        "60": 0.49054891072191364,
+        "70": 0.5928823152498932
+      },
+      "ladder": {
+        "0": 3.163468812323774,
+        "10": 3.834966745095133,
+        "20": 5.220006241311806,
+        "25": 6.664091172493718,
+        "30": 9.745172810362575
+      }
+    },
+    {
+      "handle": "support-breathe-shower-mist-100ml",
+      "title": "Support Breathe Shower Mist",
+      "type": "Shower Mist",
+      "tags": [
+        "badge_bg: #071D49",
+        "badge_colour: #f9f6f4",
+        "badge_text: NEW ARRIVAL",
+        "support breathe"
+      ],
+      "published_at": "2026-01-11T17:13:52+00:00",
+      "variant_id": 56942884487549,
+      "grams": 0,
+      "available": true,
+      "price_now": 38.0,
+      "P": 38.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/support-breathe-shower-mist-100ml",
+      "V": 6.33,
+      "vat_method": "Checkout",
+      "vat_checkout": 6.33,
+      "postage_class": "small",
+      "postage": 3.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.26483132997285774,
+        "50": 0.3671642755590022,
+        "60": 0.4694972211451467,
+        "70": 0.5718301667312912
+      },
+      "ladder": {
+        "0": 3.344187274487371,
+        "10": 4.136329551776686,
+        "20": 5.876212935400316,
+        "25": 7.8599007170435815,
+        "30": 12.797074954296184
+      }
+    },
+    {
+      "handle": "canvas-wash-bag",
+      "title": "Canvas Wash Bag",
+      "type": "Washbag",
+      "tags": [
+        "accessories",
+        "badge_bg: #071D49",
+        "badge_colour: #f9f6f4",
+        "badge_text: NEW ARRIVAL",
+        "toiletry bag",
+        "travel",
+        "washbag"
+      ],
+      "published_at": "2025-10-10T16:23:14+01:00",
+      "variant_id": 57063699054973,
+      "grams": 0,
+      "available": true,
+      "price_now": 15.0,
+      "P": 15.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/canvas-wash-bag",
+      "V": 2.5,
+      "vat_method": "Checkout",
+      "vat_checkout": 2.5,
+      "postage_class": "letterbox",
+      "postage": 2.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.16086778550961933,
+        "50": 0.26320098239869016,
+        "60": 0.365534179287761,
+        "70": 0.4678673761768317
+      },
+      "ladder": {
+        "0": 4.665629860031104,
+        "10": 6.772009029345372,
+        "20": 15.544041450777197,
+        "25": 69.76744186046517,
+        "30": null
+      }
+    },
+    {
+      "handle": "deep-relax-nourishing-body-treatment-200ml",
+      "title": "Deep Relax Sleep Well Nourishing Body Treatment",
+      "type": "Body Butter",
+      "tags": [
+        "badge_bg: #071D49",
+        "badge_colour: #f9f6f4",
+        "body butter",
+        "deep relax",
+        "moisturisers",
+        "Sleep",
+        "spring sale",
+        "subscription"
+      ],
+      "published_at": "2025-09-17T17:58:52+01:00",
+      "variant_id": 45016138121458,
+      "grams": 0,
+      "available": true,
+      "price_now": 58.0,
+      "P": 58.0,
+      "live_markdown": 0.0,
+      "url": "https://aromatherapyassociates.com/products/deep-relax-nourishing-body-treatment-200ml",
+      "V": 9.67,
+      "vat_method": "Checkout",
+      "vat_checkout": 9.67,
+      "postage_class": "small",
+      "postage": 3.5,
+      "in_bf_collection": true,
+      "bp": {
+        "40": 0.3065977809773863,
+        "50": 0.4089311425425596,
+        "60": 0.5112645041077327,
+        "70": 0.6135978656729059
+      },
+      "ladder": {
+        "0": 3.0031584942784653,
+        "10": 3.5777439651272775,
+        "20": 4.702353203478119,
+        "25": 5.795363709032771,
+        "30": 7.891770011273961
+      }
+    }
+  ],
+  "vat_read": {
+    "the-atomiser": 13.0,
+    "festive-26-a-gift-of-relaxation": 2.5,
+    "desert-therapy-pure-essential-oil-blend-10ml-copy": 5.33,
+    "de-stress-body-oil": 10.33,
+    "de-stress-mind-mood-mist-100ml": 6.33,
+    "desert-therapy-bath-shower-oil-55ml": 10.83,
+    "destress-warming-muscle-gel": 7.67,
+    "support-breathe-shower-mist-100ml": 6.33,
+    "canvas-wash-bag": 2.5,
+    "deep-relax-nourishing-body-treatment-200ml": 9.67
+  },
+  "extra_sources": [
+    {
+      "url": "https://aromatherapyassociates.com/",
+      "label": "Homepage banners: 40% off the waterless diffuser, Rose Gift worth \u00a338 over \u00a375, up to 49% on gift sets (read 17 October 2026)"
+    },
+    {
+      "url": "https://aromatherapyassociates.com/collections/last-chance",
+      "label": "Last Chance collection (\"The Seasonal Edit\"), 26 products at 25% to 50% off today"
+    }
+  ],
+  "findings": [
+    {
+      "tag": "Live offer",
+      "big": "15.3\u00d7",
+      "big_note": "ROAS to break even at 50% margin",
+      "title": "Your 40% off The Atomiser needs 15.3\u00d7 ROAS",
+      "body": "The Atomiser is 40% off right now, at \u00a378 instead of \u00a3130. At 50% margin, a paid first order at that price needs 15.3\u00d7 ROAS to break even. At 40% margin it never pays back. At 60% it needs 4.9\u00d7. This leaves out the cost of the Rose Gift worth \u00a338 that comes with orders over \u00a375, so the real number is higher.",
+      "strip": {
+        "40": null,
+        "50": 15.291119388355206,
+        "60": 4.89519266976277,
+        "70": 2.91403593977659
+      }
+    },
+    {
+      "tag": "Last year",
+      "big": "6.7\u00d7",
+      "big_note": "typical ROAS needed at 25% off, against 3.2\u00d7 at full price",
+      "title": "Last year's 25% off, run today, takes the typical product from 3.2\u00d7 to 6.7\u00d7 ROAS",
+      "body": "Last year you ran 25% off sitewide with code BF25. At today's prices and 50% margin, the typical product here needs 3.2\u00d7 ROAS at full price for a paid first order to break even. At 25% off it needs 6.7\u00d7, and the typical product is left with about 13 points of discount before its breaking point. At 25% off, A Gift of Relaxation would have no room left at all, and Canvas Wash Bag would have less than 5 points. Exclusions applied last year, so some of these may not have been in it."
+    },
+    {
+      "tag": "First to run out",
+      "big": "18%",
+      "big_note": "deepest discount for A Gift of Relaxation at 50% margin",
+      "title": "A Gift of Relaxation runs out of room first",
+      "body": "A Gift of Relaxation (\u00a315) runs out of room first. At 50% margin it has nothing left for ads past 18% off. Product cost, VAT, fees and \u00a33.50 postage take the rest. A sitewide 18% code would leave nothing to pay for the ads that sell it, while the other products would need between 3.8\u00d7 and 12.3\u00d7 ROAS."
+    }
+  ]
+}

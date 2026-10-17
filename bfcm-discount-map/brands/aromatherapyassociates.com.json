@@ -1,0 +1,36 @@
+{
+  "brand_name": "Aromatherapy Associates",
+  "exclude_regex": "\\bU\\.S\\b",
+  "last_year_offer": {
+    "name": "25% off sitewide with code BF25",
+    "pct": 25,
+    "url": "https://aromatherapyassociates.com/collections/black-friday",
+    "evidence": "The Black Friday collection page is titled \"Black Friday Sale 2025\" and says \"Don't miss 25% off sitewide*, with code BF25 at checkout ... offer ends 7th of December 2025. *Exclusions apply.\"",
+    "exclusions": true
+  },
+  "live_offer": {
+    "name": "40% off The Atomiser (£78, was £130)",
+    "short": "40% off The Atomiser",
+    "pct": 40,
+    "product": "the-atomiser",
+    "url": "https://aromatherapyassociates.com/products/the-atomiser",
+    "free_gift": "Rose Gift worth £38 that comes with orders over £75",
+    "evidence": "Homepage banner \"Our waterless diffuser 40% savings\" and menu \"Up to 40% off our award winning waterless diffusers\". The product feed shows £78 against a compare-at price of £130. It also sits in the Last Chance collection that the site banner calls The Seasonal Edit. The homepage offers a Rose Gift worth £38 when you spend £75."
+  },
+  "extra_sources": [
+    {
+      "url": "https://aromatherapyassociates.com/",
+      "label": "Homepage banners: 40% off the waterless diffuser, Rose Gift worth £38 over £75, up to 49% on gift sets (read 17 October 2026)"
+    },
+    {
+      "url": "https://aromatherapyassociates.com/collections/last-chance",
+      "label": "Last Chance collection (\"The Seasonal Edit\"), 26 products at 25% to 50% off today"
+    }
+  ],
+  "postage_overrides": {
+    "festive-26-a-gift-of-relaxation": "small"
+  },
+  "postage_notes": {
+    "festive-26-a-gift-of-relaxation": "A single gift-boxed bath and shower oil, so small boxed rather than gift set"
+  }
+}
