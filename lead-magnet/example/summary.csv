@@ -1,0 +1,2 @@
+domain,store,status,send,report,days_to_bf,products,pct_variants_sold_out,n_fix,n_gaps,n_nearly_gone,n_ready,n_sold_out,n_marked_down,median_markdown_pct,example_product,example_sizes_out,n_reporting_platforms,reporting_platforms,currency
+wearetala.com,TALA,ok,send,../example/wearetala-com.html,41,910,31.3,268,101,167,472,99,79,70,DayFlex Wrap High Waisted Legging - Light Moss,S,8,Awin; Google Ads; Google Analytics 4; Klaviyo; Meta (Facebook/Instagram); Microsoft Ads; Pinterest; TikTok,GBP

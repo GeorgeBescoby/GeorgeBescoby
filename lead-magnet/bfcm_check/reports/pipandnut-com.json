@@ -1,0 +1,22 @@
+{
+  "domain": "pipandnut.com",
+  "store": "Pip & Nut",
+  "status": "ok",
+  "send": "hold: only 6 products, report is thin",
+  "report": "reports/pipandnut-com.html",
+  "days_to_bf": 41,
+  "products": 6,
+  "pct_variants_sold_out": 9.8,
+  "n_fix": 0,
+  "n_gaps": 0,
+  "n_nearly_gone": 0,
+  "n_ready": 6,
+  "n_sold_out": 0,
+  "n_marked_down": 0,
+  "median_markdown_pct": 0,
+  "example_product": "",
+  "example_sizes_out": "",
+  "n_reporting_platforms": 6,
+  "reporting_platforms": "Google Ads; Google Analytics 4; Klaviyo; Meta (Facebook/Instagram); Pinterest; TikTok",
+  "currency": "GBP"
+}

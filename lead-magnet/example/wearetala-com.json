@@ -1,0 +1,22 @@
+{
+  "domain": "wearetala.com",
+  "store": "TALA",
+  "status": "ok",
+  "send": "send",
+  "report": "../example/wearetala-com.html",
+  "days_to_bf": 41,
+  "products": 910,
+  "pct_variants_sold_out": 31.3,
+  "n_fix": 268,
+  "n_gaps": 101,
+  "n_nearly_gone": 167,
+  "n_ready": 472,
+  "n_sold_out": 99,
+  "n_marked_down": 79,
+  "median_markdown_pct": 70,
+  "example_product": "DayFlex Wrap High Waisted Legging - Light Moss",
+  "example_sizes_out": "S",
+  "n_reporting_platforms": 8,
+  "reporting_platforms": "Awin; Google Ads; Google Analytics 4; Klaviyo; Meta (Facebook/Instagram); Microsoft Ads; Pinterest; TikTok",
+  "currency": "GBP"
+}

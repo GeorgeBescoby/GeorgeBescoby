@@ -1,0 +1,22 @@
+{
+  "domain": "allbirds.com",
+  "store": "Allbirds",
+  "status": "ok",
+  "send": "send",
+  "report": "reports/allbirds-com.html",
+  "days_to_bf": 41,
+  "products": 691,
+  "pct_variants_sold_out": 68.6,
+  "n_fix": 214,
+  "n_gaps": 35,
+  "n_nearly_gone": 179,
+  "n_ready": 38,
+  "n_sold_out": 312,
+  "n_marked_down": 35,
+  "median_markdown_pct": 50,
+  "example_product": "Women's Wool Runner NZ Mid Waterproof - Natural Black (Natural Black Sole)",
+  "example_sizes_out": "8, 8.5, 9, 9.5",
+  "n_reporting_platforms": 7,
+  "reporting_platforms": "Attentive; Criteo; Google Ads; Google Analytics 4; Microsoft Ads; Reddit; TikTok",
+  "currency": "USD"
+}

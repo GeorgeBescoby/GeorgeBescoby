@@ -1,0 +1,4 @@
+# Raw fetches used during research (several MB, re-fetchable)
+research/raw/
+*.products.json
+__pycache__/

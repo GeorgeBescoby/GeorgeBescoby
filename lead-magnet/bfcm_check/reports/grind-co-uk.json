@@ -1,0 +1,22 @@
+{
+  "domain": "grind.co.uk",
+  "store": "Grind",
+  "status": "ok",
+  "send": "hold: only 14 products, report is thin",
+  "report": "reports/grind-co-uk.html",
+  "days_to_bf": 41,
+  "products": 14,
+  "pct_variants_sold_out": 34.2,
+  "n_fix": 0,
+  "n_gaps": 0,
+  "n_nearly_gone": 0,
+  "n_ready": 3,
+  "n_sold_out": 4,
+  "n_marked_down": 3,
+  "median_markdown_pct": 43,
+  "example_product": "",
+  "example_sizes_out": "",
+  "n_reporting_platforms": 7,
+  "reporting_platforms": "Google Ads; Google Analytics 4; Impact; Klaviyo; Meta (Facebook/Instagram); Microsoft Ads; TikTok",
+  "currency": "GBP"
+}

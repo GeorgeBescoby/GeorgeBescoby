@@ -1,0 +1,49 @@
+
+== allbirds.com
+  page 1: 250 products
+  page 2: 250 products
+  page 3: 192 products
+  app pixels: 10, GTM containers read: ['GTM-TH8KRSBJ']
+  -> reports/allbirds-com.html  (691 products, 214 fix, 38 ready, 7 reporting platforms)
+
+== snagtights.com
+  page 1: 250 products
+  page 2: 250 products
+  page 3: 250 products
+  page 4: 105 products
+  app pixels: 21, GTM containers read: ['GTM-TGLWXGD']
+  -> reports/snagtights-com.html  (853 products, 437 fix, 230 ready, 7 reporting platforms)
+
+== lounge.com
+  page 1: 250 products
+  page 2: 250 products
+  page 3: 250 products
+  page 4: 250 products
+  page 5: 250 products
+  page 6: 205 products
+  app pixels: 15, GTM containers read: none
+  -> reports/lounge-com.html  (1452 products, 497 fix, 561 ready, 8 reporting platforms)
+
+== grind.co.uk
+  page 1: 16 products
+  app pixels: 14, GTM containers read: ['GTM-MGRCJHV', 'GTM-MZ6DS2N']
+  -> reports/grind-co-uk.html  (14 products, 0 fix, 3 ready, 7 reporting platforms)
+
+== pipandnut.com
+  page 1: 6 products
+  app pixels: 14, GTM containers read: none
+  -> reports/pipandnut-com.html  (6 products, 0 fix, 6 ready, 6 reporting platforms)
+
+== huel.com
+  meta.json HTTP 404: will fall back for name/currency
+  SKIPPED: products.json not available (HTTP 404). Likely a headless or locked-down store, or not Shopify.
+
+== bulk.com
+  meta.json HTTP 404: will fall back for name/currency
+  SKIPPED: products.json not available (HTTP 404). Likely a headless or locked-down store, or not Shopify.
+
+== not-a-real-store-xyz123.com
+  meta.json HTTP 0: will fall back for name/currency
+  SKIPPED: products.json not available (HTTP 0). Likely a headless or locked-down store, or not Shopify.
+
+Done: 5/8 reports. Mail-merge fields in reports/summary.csv

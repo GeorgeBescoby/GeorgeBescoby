@@ -1,0 +1,22 @@
+{
+  "domain": "lounge.com",
+  "store": "UK Lounge",
+  "status": "ok",
+  "send": "send",
+  "report": "reports/lounge-com.html",
+  "days_to_bf": 41,
+  "products": 1452,
+  "pct_variants_sold_out": 33.4,
+  "n_fix": 497,
+  "n_gaps": 221,
+  "n_nearly_gone": 276,
+  "n_ready": 561,
+  "n_sold_out": 119,
+  "n_marked_down": 431,
+  "median_markdown_pct": 50,
+  "example_product": "Evelyn Basque (Set) - Green",
+  "example_sizes_out": "M, L, XL",
+  "n_reporting_platforms": 8,
+  "reporting_platforms": "Google Ads; Google Analytics 4; Impact; Klaviyo; Meta (Facebook/Instagram); Pinterest; Reddit; TikTok",
+  "currency": "GBP"
+}

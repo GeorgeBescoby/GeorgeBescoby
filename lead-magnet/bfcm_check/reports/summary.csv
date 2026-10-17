@@ -1,0 +1,9 @@
+domain,store,status,send,report,days_to_bf,products,pct_variants_sold_out,n_fix,n_gaps,n_nearly_gone,n_ready,n_sold_out,n_marked_down,median_markdown_pct,example_product,example_sizes_out,n_reporting_platforms,reporting_platforms,currency,reason
+allbirds.com,Allbirds,ok,send,reports/allbirds-com.html,41,691,68.6,214,35,179,38,312,35,50,Women's Wool Runner NZ Mid Waterproof - Natural Black (Natural Black Sole),"8, 8.5, 9, 9.5",7,Attentive; Criteo; Google Ads; Google Analytics 4; Microsoft Ads; Reddit; TikTok,USD,
+snagtights.com,Snag,ok,send,reports/snagtights-com.html,41,853,50.9,437,76,361,230,86,34,20,Woven Viscose Tailored Shirt - Love Line,"E2 (18), F2 (22), G1 (24), H1 (28), H2 (30)",7,Google Ads; Google Analytics 4; Klaviyo; Meta (Facebook/Instagram); Pinterest; Reddit; TikTok,GBP,
+lounge.com,UK Lounge,ok,send,reports/lounge-com.html,41,1452,33.4,497,221,276,561,119,431,50,Evelyn Basque (Set) - Green,"M, L, XL",8,Google Ads; Google Analytics 4; Impact; Klaviyo; Meta (Facebook/Instagram); Pinterest; Reddit; TikTok,GBP,
+grind.co.uk,Grind,ok,"hold: only 14 products, report is thin",reports/grind-co-uk.html,41,14,34.2,0,0,0,3,4,3,43,,,7,Google Ads; Google Analytics 4; Impact; Klaviyo; Meta (Facebook/Instagram); Microsoft Ads; TikTok,GBP,
+pipandnut.com,Pip & Nut,ok,"hold: only 6 products, report is thin",reports/pipandnut-com.html,41,6,9.8,0,0,0,6,0,0,0,,,6,Google Ads; Google Analytics 4; Klaviyo; Meta (Facebook/Instagram); Pinterest; TikTok,GBP,
+huel.com,,skipped,,,,,,,,,,,,,,,,,,"products.json not available (HTTP 404). Likely a headless or locked-down store, or not Shopify."
+bulk.com,,skipped,,,,,,,,,,,,,,,,,,"products.json not available (HTTP 404). Likely a headless or locked-down store, or not Shopify."
+not-a-real-store-xyz123.com,,skipped,,,,,,,,,,,,,,,,,,"products.json not available (HTTP 0). Likely a headless or locked-down store, or not Shopify."

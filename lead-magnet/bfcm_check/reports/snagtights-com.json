@@ -1,0 +1,22 @@
+{
+  "domain": "snagtights.com",
+  "store": "Snag",
+  "status": "ok",
+  "send": "send",
+  "report": "reports/snagtights-com.html",
+  "days_to_bf": 41,
+  "products": 853,
+  "pct_variants_sold_out": 50.9,
+  "n_fix": 437,
+  "n_gaps": 76,
+  "n_nearly_gone": 361,
+  "n_ready": 230,
+  "n_sold_out": 86,
+  "n_marked_down": 34,
+  "median_markdown_pct": 20,
+  "example_product": "Woven Viscose Tailored Shirt - Love Line",
+  "example_sizes_out": "E2 (18), F2 (22), G1 (24), H1 (28), H2 (30)",
+  "n_reporting_platforms": 7,
+  "reporting_platforms": "Google Ads; Google Analytics 4; Klaviyo; Meta (Facebook/Instagram); Pinterest; Reddit; TikTok",
+  "currency": "GBP"
+}

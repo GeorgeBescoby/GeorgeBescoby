@@ -1,0 +1,135 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Pip &amp; Nut · Black Friday Stock &amp; Spend Check · ASK BOSCO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2c2c2c;--purple:#7500e3;--purple-d:#1d0254;--yellow:#ffd500;--grey:#f6f6f6;--line:#e6e6e6;
+--muted:#676879;--red:#c62828;--red-bg:#fdecec;--green:#1b7a3d;--green-bg:#e7f6ec;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--grey);color:var(--ink);font:15px/1.55 Poppins,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--purple)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{background:var(--ink);color:#fff;padding:22px 0 30px}
+header .logo svg{height:30px;width:auto;display:block}
+.kicker{display:inline-block;margin-top:26px;background:var(--yellow);color:var(--ink);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:99px}
+h1{font-weight:800;font-size:clamp(28px,6vw,42px);line-height:1.15;margin:14px 0 8px}
+h1 span{color:var(--yellow)}
+.sub{color:#cfcfd6;font-size:14px;margin:0}
+.lead{background:var(--card);border-radius:16px;padding:20px;margin:-18px 0 18px;box-shadow:0 4px 18px rgba(0,0,0,.06);font-size:16px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:0 0 22px}
+@media(min-width:680px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:var(--card);border-radius:14px;padding:14px}
+.kpi b{display:block;font-size:26px;font-weight:800;line-height:1.1}
+.kpi span{font-size:12.5px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+.kpi.hot b{color:var(--red)} .kpi.ok b{color:var(--green)}
+section{background:var(--card);border-radius:16px;padding:20px;margin:0 0 16px}
+h2{font-weight:800;font-size:21px;line-height:1.25;margin:0 0 6px}
+h2 .n{color:var(--purple)}
+.why{color:var(--muted);font-size:14px;margin:0 0 14px}
+.tag{display:inline-block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:6px;margin-bottom:8px}
+.t-fix{background:var(--red-bg);color:var(--red)} .t-ok{background:var(--green-bg);color:var(--green)}
+.t-chk{background:#fff6cc;color:#7a5d00} .t-bridge{background:#efe3fd;color:var(--purple)}
+ul.list{list-style:none;margin:0;padding:0}
+.prod{padding:11px 0;border-top:1px solid var(--line)}
+.prod:first-child{border-top:0}
+.prod a{font-weight:600;text-decoration:none;color:var(--ink)}
+.prod a:hover{color:var(--purple)}
+.meta{font-size:12.5px;color:var(--muted)}
+.sizes{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.lbl{font-size:11px;color:var(--muted);margin:0 2px 0 6px} .lbl:first-child{margin-left:0}
+.chip{font-size:11.5px;padding:2px 7px;border-radius:6px;font-weight:500;white-space:nowrap}
+.chip.out{background:var(--red-bg);color:var(--red);text-decoration:line-through}
+.chip.in{background:var(--green-bg);color:var(--green)}
+.chip.p{background:var(--grey);color:var(--ink);text-decoration:none}
+details{margin-top:10px}
+summary{cursor:pointer;color:var(--purple);font-weight:600;font-size:14px}
+.cat h3{font-size:14px;margin:16px 0 0;font-weight:600}
+.cat h3 small{color:var(--muted);font-weight:400}
+.callout{background:var(--grey);border-left:4px solid var(--yellow);border-radius:8px;padding:12px 14px;font-size:14px;margin:12px 0 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:600;color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;padding:6px 6px 6px 0;border-bottom:1px solid var(--line)}
+td{padding:8px 6px 8px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+td.num,th.num{text-align:right;white-space:nowrap}
+td .cn{display:block;font-weight:600} td .meta{display:block} td.b{width:26%;min-width:74px}
+.bar{height:6px;border-radius:3px;background:var(--line);margin-top:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--red)}
+.bar.md i{background:var(--purple)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.grp{margin:12px 0 0}
+.grp h3{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 6px;font-weight:600}
+.plat{display:inline-flex;align-items:center;gap:6px;background:var(--grey);border-radius:8px;padding:6px 10px;margin:0 6px 6px 0;font-size:13px;font-weight:500}
+.plat small{color:var(--muted);font-weight:400;font-size:11px}
+.plat.ab{box-shadow:inset 0 0 0 1.5px var(--purple)}
+.flags li{margin:0 0 8px}
+.gap{display:grid;gap:10px}
+.gaprow{border:1px solid var(--line);border-radius:12px;padding:14px}
+.gaprow h3{font-size:15px;margin:0 0 8px;font-weight:600}
+.gaprow .two{display:grid;gap:8px}
+@media(min-width:640px){.gaprow .two{grid-template-columns:1fr 1fr}}
+.gaprow .two div{font-size:13.5px;border-radius:8px;padding:10px}
+.see{background:var(--grey)} .ab-ans{background:#f3ebfd}
+.gaprow b.h{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.see b.h{color:var(--muted)} .ab-ans b.h{color:var(--purple)}
+.cta{background:var(--purple-d);color:#fff;border-radius:16px;padding:24px 20px;margin:0 0 16px}
+.cta h2{color:#fff} .cta p{color:#ddd3f5;margin:6px 0 16px}
+.btn{display:inline-block;background:var(--yellow);color:var(--ink);font-weight:600;text-decoration:none;padding:12px 18px;border-radius:10px}
+.cta small{display:block;margin-top:12px;color:#b9a9e0}
+footer{font-size:12px;color:var(--muted);padding:6px 0 40px}
+footer h3{font-size:13px;color:var(--ink);margin:14px 0 4px}
+footer ul{padding-left:18px;margin:4px 0}
+code{font-size:11.5px;background:#ececf1;padding:1px 4px;border-radius:4px;word-break:break-all}
+</style></head><body>
+<header><div class="wrap">
+<div class="logo" aria-label="ASK BOSCO"><svg role="img" aria-label="ASK BOSCO" xmlns="http://www.w3.org/2000/svg" id="Layer_1" version="1.1" viewBox="0 0 992.1 387.7"><defs><style> .st0 { fill: #fff; } .st1 { display: none; } </style></defs><g id="BG" class="st1"><rect x="-.7" y=".6" width="993" height="388"></rect></g><g id="ASKBOSCO_x5F_Black"><g><g><g><path class="st0" d="M200.9,304.1c0,32.9-26.8,54.3-59.9,54.3H63.1v-185.5h72.6c32.3,0,58.6,20.9,58.6,53s-6.1,27.6-16.2,36.3c13.8,8.8,22.8,23.1,22.8,41.9ZM105.5,212.7v32.9h30.2c9.5,0,16.2-6.9,16.2-16.4s-6.4-16.4-16.2-16.4h-30.2ZM158.5,300.9c0-10.3-6.9-17.8-17.5-17.8h-35.5v35.5h35.5c10.6,0,17.5-7.4,17.5-17.8Z"></path><path class="st0" d="M401,316.3l36.6-21.2c6.6,15.4,18,25.7,39,25.7s25.2-8,25.2-15.1c0-11.4-10.6-15.9-38.4-23.6-27.6-7.7-54.6-20.9-54.6-56.5s30.2-56.5,62.3-56.5,54.3,14.6,67.9,41.9l-35.8,20.9c-6.4-13.2-15.1-21.5-32.1-21.5s-19.9,6.6-19.9,14.1,4.5,14.3,33.4,23.1c28.1,8.5,59.6,18.3,59.6,57.5s-28.6,57-68.9,57-63.9-18.6-74.2-45.9Z"></path><path class="st0" d="M553.4,265.7c0-54.6,40.5-96.5,96.5-96.5s63.3,16.7,79.5,42.9l-36.6,21.2c-8.2-14.3-24.1-22.8-42.9-22.8-32.9,0-54.1,22-54.1,55.1s21.2,55.1,54.1,55.1,35-8.5,42.9-22.8l36.6,21.2c-15.9,26.2-45.6,42.9-79.5,42.9-55.9,0-96.5-41.9-96.5-96.5Z"></path><path class="st0" d="M736.1,265.7c0-54.6,43.2-96.5,96.5-96.5s96.5,41.9,96.5,96.5-43.2,96.5-96.5,96.5-96.5-41.9-96.5-96.5ZM886.6,265.7c0-33.1-23.9-55.1-54.1-55.1s-54.1,22-54.1,55.1,23.9,55.1,54.1,55.1,54.1-22,54.1-55.1Z"></path></g><path class="st0" d="M304.6,171c-52.9,0-95.7,42.9-95.7,95.7s42.9,95.7,95.7,95.7,95.7-42.9,95.7-95.7c0-52.9-42.9-95.7-95.7-95.7ZM304.6,339c-39.9,0-72.2-32.3-72.2-72.2s32.3-72.2,72.2-72.2,72.2,32.3,72.2,72.2-32.3,72.2-72.2,72.2Z"></path><path class="st0" d="M304.6,206.8c-33.1,0-60,26.9-60,60s26.8,60,60,60,60-26.9,60-60c0-33.1-26.9-60-60-60ZM304.6,295.3c-15.8,0-28.6-12.8-28.6-28.6s12.8-28.6,28.6-28.6,28.6,12.8,28.6,28.6c0,15.8-12.8,28.6-28.6,28.6Z"></path></g><g><path class="st0" d="M146.5,132.5h-46.2l-6.2,19.5h-31.1L105.3,27.7h36.2l42.3,124.3h-31.1l-6.2-19.5ZM138,105.9l-14.6-45.7-14.6,45.7h29.1Z"></path><path class="st0" d="M185.6,123.8l24.5-14.2c4.4,10.3,12.1,17.2,26.1,17.2s16.9-5.3,16.9-10.1c0-7.6-7.1-10.7-25.8-15.8-18.5-5.2-36.6-14-36.6-37.8s20.2-37.8,41.7-37.8,36.4,9.8,45.5,28.1l-24,14c-4.3-8.9-10.1-14.4-21.5-14.4s-13.3,4.4-13.3,9.4,3,9.6,22.4,15.5c18.8,5.7,40,12.3,40,38.5s-19.2,38.2-46.2,38.2c-26.1,0-42.8-12.4-49.7-30.7Z"></path><path class="st0" d="M363.1,152.1l-39.8-57.6v57.6h-28.4V27.7h28.4v54l38-54h32.3l-41.9,60.6,43.7,63.8h-32.3Z"></path></g></g></g></svg></div>
+<span class="kicker">41 days to Black Friday</span>
+<h1>Black Friday Stock &amp; Spend Check<br><span>Pip &amp; Nut</span></h1>
+<p class="sub">Prepared 17 October 2026 from pipandnut.com's public storefront only. No logins, no internal data. Black Friday is Fri 27 Nov 2026.</p>
+</div></header>
+<main class="wrap">
+<div class="lead">None of your 6 live products is missing a core size or most of its options right now. <b>0</b> are completely sold out, and <b>6</b> are at full price with everything in stock.</div>
+<div class="kpis">
+<div class="kpi"><b>6</b><span>live products checked (61 variants)</span></div>
+<div class="kpi hot"><b>10%</b><span>of variants sold out right now</span></div>
+<div class="kpi hot"><b>0</b><span>products missing a core size or most options</span></div>
+<div class="kpi"><b>0%</b><span>of products on markdown and still buyable</span></div>
+</div>
+<section><span class="tag t-ok">Ready to push</span>
+<h2><span class="n">6</span> full-price products with every size in stock</h2>
+<p class="why">Every size is available and none of them is marked down today, so any Black Friday offer on these comes off full price and doesn't stack on an existing sale. Grouped by category, highest price first, because higher-ticket products absorb a Black Friday cost-per-acquisition best.</p>
+<div class="cat"><h3>Jars <small>· 3 ready</small></h3><ul class="list"><li class="prod"><a href="https://www.pipandnut.com/products/chocolate-hazelnut-range" target="_blank" rel="noopener">Chocolate Hazelnut Spread</a><div class="meta">Jars · £3.50</div></li><li class="prod"><a href="https://www.pipandnut.com/products/peanut-butter-range" target="_blank" rel="noopener">Peanut Butter</a><div class="meta">Jars · £3.49</div></li><li class="prod"><a href="https://www.pipandnut.com/products/smooth-almond-butter-range" target="_blank" rel="noopener">Almond Butter</a><div class="meta">Jars · £3.49</div></li></ul><h3>Protein Bars <small>· 1 ready</small></h3><ul class="list"><li class="prod"><a href="https://www.pipandnut.com/products/protein-bars-range" target="_blank" rel="noopener">Protein Bars</a><div class="meta">Protein Bars · £24.95</div></li></ul><h3>Nut Butter Cups <small>· 1 ready</small></h3><ul class="list"><li class="prod"><a href="https://www.pipandnut.com/products/nut-butter-cups-range" target="_blank" rel="noopener">Nut Butter Cups</a><div class="meta">Nut Butter Cups · £21.99</div></li></ul><h3>Nut Butter Stuffed Oat Bars <small>· 1 ready</small></h3><ul class="list"><li class="prod"><a href="https://www.pipandnut.com/products/stuffed-oat-bars-range" target="_blank" rel="noopener">Stuffed Oat Bars</a><div class="meta">Nut Butter Stuffed Oat Bars · £19</div></li></ul></div></section><section><span class="tag t-bridge">Who's counting your Black Friday</span>
+<h2><span class="n">6</span> platforms are set up to report their own version of your BFCM sales</h2>
+<p class="why">We read the tags on your storefront and in your public Google Tag Manager container. Each ad, email and affiliate platform credits itself with orders that followed a click or view inside its own attribution window, and one order often has several of those. So on 1 December these platforms' revenue figures will usually add up to more than Shopify's actual sales, and they won't agree with each other. <b>Outlined</b> = platforms ASK BOSCO connects.</p><div class="grp"><h3>Ad platforms</h3><span class="plat ab">Google Ads <small>Shopify app pixel + site code / GTM</small></span><span class="plat ab">Meta (Facebook/Instagram) <small>Shopify app pixel</small></span><span class="plat">Pinterest <small>Shopify app pixel</small></span><span class="plat ab">TikTok <small>Shopify app pixel</small></span></div><div class="grp"><h3>Email & SMS</h3><span class="plat ab">Klaviyo <small>Shopify app pixel + site code</small></span></div><div class="grp"><h3>Analytics & measurement</h3><span class="plat ab">Google Analytics 4 <small>Shopify app pixel + site code / GTM</small></span><span class="plat">Microsoft Clarity <small>site code</small></span></div><div class="grp"><h3>Reviews</h3><span class="plat">Bazaarvoice <small>site code</small></span></div><p class="meta">Plus 4 other Shopify app pixel(s) we couldn't identify by name.</p><p class="meta">A tag being present doesn't prove a channel has live spend. It shows the platform is wired into your site.</p></section><section><span class="tag t-bridge">What this check can't see</span>
+<h2>The answers that need your own data</h2>
+<p class="why">Everything above comes from the outside. These are the questions it can't answer, and what ASK BOSCO answers once your store is connected.</p>
+<div class="gap">
+<div class="gaprow"><h3>Which Black Friday campaigns will actually make money?</h3><div class="two">
+<div class="see"><b class="h">What we can see</b>Which products are in stock and at what price. Nothing about spend, margin or returns.</div>
+<div class="ab-ans"><b class="h">ASK BOSCO</b>Joins your Shopify sales with spend from Google Ads, Meta, Pinterest, TikTok in one place, so you can see which campaigns are actually profitable, not just which ones each platform says worked.</div></div></div>
+<div class="gaprow"><h3>What did Black Friday 2025 really return, by channel?</h3><div class="two">
+<div class="see"><b class="h">What we can see</b>Nothing. Last year's results aren't public.</div>
+<div class="ab-ans"><b class="h">ASK BOSCO</b>Connecting your store pulls in historical data too, so last year's BFCM is there to compare against before this year's starts.</div></div></div>
+<div class="gaprow"><h3>Which platform's Black Friday number do you believe?</h3><div class="two">
+<div class="see"><b class="h">What we can see</b>6 platforms tagged to count your sales.</div>
+<div class="ab-ans"><b class="h">ASK BOSCO</b>Shopify revenue next to what each platform claims, side by side, updated every hour through the weekend.</div></div></div>
+<div class="gaprow"><h3>Are the sold-out sizes your best sellers?</h3><div class="two">
+<div class="see"><b class="h">What we can see</b>In stock or not. No quantities, no sales.</div>
+<div class="ab-ans"><b class="h">ASK BOSCO</b>Ask it in plain English, e.g. "what were our top 20 products by revenue in the last 30 days, and which channels did those orders come from?"</div></div></div>
+</div></section>
+<div class="cta"><h2>Run this on your real numbers</h2>
+<p>Install ASK BOSCO from the Shopify App Store and connect Pip &amp; Nut in a few minutes. No sales call needed. 14-day free trial, then $199/month.</p>
+<a class="btn" href="https://apps.shopify.com/ask-bosco" target="_blank" rel="noopener">Start the free trial on Shopify →</a>
+<small>Or just reply to the email this came with and we'll answer any question about this report.</small></div>
+<footer><h3>How this was made</h3>
+<ul>
+<li>Catalogue: <code>https://www.pipandnut.com/products.json</code>, fetched 17 Oct 2026, 11:58 UTC. 6 products analysed; 0 excluded (gift cards, shipping protection, non-physical items).</li>
+<li>"Sold out" uses Shopify's public in-stock flag for each variant at that moment. Items on pre-order or set to keep selling when out of stock show as in stock. We can't see stock quantities, sales, or incoming stock.</li>
+<li>"Core size" means S, M or L for letter sizes, otherwise the middle half of a product's size range. "Missing a core size" means every variant in that size is unavailable while other sizes are still in stock. For products without sizes, we flag the ones with half or more of their options sold out.</li>
+<li>Markdowns compare each variant's price with its compare-at price. The stacking example uses an illustrative 20% code. We don't know your Black Friday plans.</li>
+
+<li>Platforms: Shopify app pixels listed in your storefront code.</li>
+<li>Everything here is public. It's a snapshot, not an audit, and it will be slightly out of date by the time you read it.</li>
+</ul>
+<p>ASK BOSCO® · <a href="https://askbosco.io">askbosco.io</a></p></footer>
+</main></body></html>
